@@ -297,6 +297,8 @@
 
 .svg-down, .svg-up{
   height: 12%;
+  background-color: $custom-blue;
+  padding: 1em;
 }
 
 .fourth-row{
@@ -414,13 +416,13 @@ transform: translateX(0);
 @keyframes entranceUp
 {
   from{ transform: translateY(-150%);}
-  to{transform: translateY(0);}
+  to{transform: translateY(-15%);}
 }
 
 @keyframes entranceDown
 {
   from{ transform: translateY(150%);}
-  to{transform: translateY(0);}
+  to{transform: translateY(15%);}
 }
 
 
