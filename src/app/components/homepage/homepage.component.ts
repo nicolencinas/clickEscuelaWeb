@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, HostListener } from '@angular/core';
 import VanillaTilt from 'vanilla-tilt';
 
 @Component({
@@ -9,15 +9,37 @@ import VanillaTilt from 'vanilla-tilt';
 export class HomepageComponent implements OnInit {
 
   @ViewChild('card1') card1: ElementRef;
+  @ViewChild('document') document: ElementRef;
+
   @ViewChild('card2') card2: ElementRef;
   @ViewChild('card3') card3: ElementRef;
 
 
-  constructor() { }
+  constructor(private render: Renderer2) { 
+  
+  }
+
+ 
+
 
   ngOnInit() 
   {
+    this.render.listen('window','scroll', ($event)=>{
+      console.log($event)
+    })
+  }
+
+  ngAfterViewInit()
+  {
     
+    this.render.listen("document",'keydown',($event) =>
+    {
+      this.render.addClass(this.card1.nativeElement,"fade-in-row")
+    })
+
+  
+
+   
   }
 
   // ngAfterViewInit() {

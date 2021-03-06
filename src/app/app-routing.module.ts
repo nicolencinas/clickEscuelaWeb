@@ -10,3 +10,4 @@ const routes: Routes = [{ path: 'homepage' , component: HomepageComponent}];
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
