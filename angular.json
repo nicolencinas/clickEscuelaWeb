@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "clickEscuelaWeb"
+    }
+  },
+  "defaultProject": "clickEscuelaWeb",
+  "cli": {
+    "analytics": "37a67d3d-471a-4beb-bd6f-25db8c0436ac"
+  }
 }
