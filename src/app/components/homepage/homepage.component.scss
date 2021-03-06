@@ -27,7 +27,28 @@
     box-shadow: 4px 4px 12px 12px rgba(0, 0, 0, 0.15);
     z-index:6;
 }
+#circle1,#circle2,#circle3
+{
+  animation: rotateInifinite 1s ease-in-out 0.5s infinite;
+  transform-origin: center;
+  
 
+}
+
+#circle1{
+  animation-delay: 1s;
+}
+#circle2{
+  animation-delay: 1.5s;
+}
+#circle3{
+  animation-delay: 2s;
+}
+
+@keyframes rotateInifinite{
+  from{transform: rotate(0);}
+  to{transform: rotate(360deg);}
+}
 .fade-in img{
     width: auto;
     height: 100%;
