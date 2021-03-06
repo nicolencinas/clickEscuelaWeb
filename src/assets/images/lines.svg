@@ -1,0 +1,22 @@
+<svg id="Capa_1" data-name="Capa 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1343 1319">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #35bfec;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 6px;
+      }
+    </style>
+  </defs>
+  <polyline class="cls-1" points="35 468 287.57 468 366.29 546.71 724.17 546.71 867.73 690.27 1033.62 690.27 1278.8 445.09"/>
+  <polyline class="cls-1" points="1084.5 497.5 1006.04 497.5 965.77 537.77 886.55 537.77 788.39 439.61 788.39 402.62 1110.5 402.62"/>
+  <polyline class="cls-1" points="656.9 1286.53 520.68 1150.32 520.68 936 383.34 798.66 69 807"/>
+  <polyline class="cls-1" points="1124 756 775 756 696.5 834.5 584.5 834.5 411.5 661.5 69 661.5"/>
+  <polyline class="cls-1" points="216 1316 216 1131.81 157.6 1073.4 157.6 741.17 294.88 603.88 46 603.88"/>
+  <polyline class="cls-1" points="341 3 341 24.23 499.88 183.12 499.88 433 420.44 433 331.83 344.39 3 344.39"/>
+  <polyline class="cls-1" points="610.81 959.94 687 959.94 731.03 1003.97 932.51 1003.97 979.07 1050.53 1340 1050.53"/>
+  <polyline class="cls-1" points="960.09 1316 924.54 1280.46 924.54 1186.96 1004.25 1107.25 924.54 1107.25 868.4 1163.4 646 1163.4 571.8 1089.2"/>
+  <path class="cls-1" d="M396,339h66.5s59.2-53.4,59.2-59.2V123.47l38.88-38.89H1045" transform="translate(134 152)"/>
+</svg>

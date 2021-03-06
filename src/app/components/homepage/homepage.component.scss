@@ -1,0 +1,289 @@
+@import '../../../assets/styles/color-pallete.scss';
+@import "../../../assets/styles/custom-fonts.scss";
+
+
+.container.principal{
+    background: url(../../../assets/images/background.svg);
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.first-row{
+    display: flex;
+    width: 100%;
+    height: 243px;
+    padding: 0;
+    margin: 0;
+    background: url(../../../assets/images/background1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    justify-content: center;
+    position: relative;
+    box-shadow: 4px 4px 12px 12px rgba(0, 0, 0, 0.15);
+    z-index:6;
+}
+
+.fade-in img{
+    width: auto;
+    height: 100%;
+    position: absolute;
+}
+
+.container.principal{
+    max-width: 100% ;
+    padding: 0;
+}
+
+.welcome{
+    width: 40% !important;
+    position: absolute;
+    right: -5%;
+    top: 2em;
+    z-index: 99;
+    filter: drop-shadow(2px 2px 12px rgba(0, 0, 0, 0.226));
+}
+
+.animate,.animate2
+{
+    animation-name: appears;
+    animation-timing-function: ease-in-out;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-delay: 1s;
+    opacity: 0;
+  
+    
+}
+.animate{
+    animation-delay: 0s;
+}
+.animate2{
+    animation-delay: 2.5s;
+}
+
+
+
+@keyframes appears{
+   0%,33%{
+      opacity: 0;
+    }
+
+    33%,66%{
+      opacity: 1;
+    }
+    66%,100%{
+        opacity: 0;
+    }
+  }
+
+//Comienza el second row
+
+.second-row
+{
+    margin-top: 100px;
+    margin-bottom: 4em;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+
+.second-row .col-4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100vw;
+    height: auto;
+}
+  .mycard{
+      margin-right: 0;
+      width: 80%;
+      height: 450px;
+      background-color: $custom-blue-glass;
+      position: relative;
+      border-radius: 0.5em;
+      box-shadow: 2px 2px 12px 2px rgba(0, 0, 0, 0.527);
+      transition: 0.5s ease-in-out;
+      cursor: pointer;
+  }
+
+  .span-title{
+      text-align: start;
+      padding: 0.5em;
+      background: $blue-gray-2;
+      color: black;
+      border-radius: 0.2em;
+  }
+
+  .mycard:hover{
+      transform: scale(1.05);
+      transform: rotate3d(15deg);
+      background-color: #2d5b84;
+
+      
+  }
+
+  .mycard:hover{
+    box-shadow: 12px 12px 12px 2px #2d5b8465;
+
+  }
+  .mycard.second-card:hover{
+    box-shadow: 2px 12px 12px 2px #2d5b8465;
+
+  }
+  .mycard.third-card:hover{
+    box-shadow: -12px 12px 12px 2px #2d5b8465;
+
+  }
+  span{
+      color: whitesmoke;
+  }
+
+  .mycard img{
+      filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.411));
+  }
+
+  
+
+  .first-card img
+  {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: -30%;
+  }
+
+  .first-card span
+  {
+    text-align: start;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    width: 50%;
+  }
+
+  .second-card{
+      overflow: hidden;
+  }
+
+  .second-card img
+  {
+    position: absolute;
+    width: 100%;
+    bottom: -100px;
+    left: 0;
+
+  }
+
+  .second-card span
+  {
+    text-align: start;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    width: 100%;
+  }
+
+  .third-card img
+  {
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+    right: -30%;
+  }
+
+  .third-card span
+  {
+    text-align: end;
+    padding: 1em;
+    position: absolute;
+    right: 0;
+    width: 50%;
+    left: 0;
+  }
+
+
+  .mycard svg{
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 100%;
+  }
+
+  .fade-in{
+      display: flex;
+      justify-content: center;
+      width:auto;
+  }
+
+
+  .fade-in img {
+    position:absolute;
+    top:0;
+    -webkit-animation-name: fade;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 6s;
+    animation-name: fade;
+    animation-iteration-count: infinite;
+    animation-duration: 6s;
+}
+
+@-webkit-keyframes fade {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    33% {opacity: 1;}
+    53% {opacity: 0;}
+    100% {opacity: 0;}
+}
+@keyframes fade {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    33% {opacity: 1;}
+    53% {opacity: 0;}
+    100% {opacity: 0;}
+}
+
+#f1 {
+}
+#f2 {
+    -webkit-animation-delay: -4s;
+}
+#f3 {
+    -webkit-animation-delay: -2s;
+}
+
+//Empieza third-row
+  
+.third-row{
+    background-color:$green;
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    height: 500px;
+    margin-bottom: 4em;
+    border-radius: 0.7em;
+    overflow: hidden;
+}
+
+.title-card{
+    background-color: transparent;
+    height: 100%;
+}
+
+
+.title-card span{
+    font-family: 'BebasNeue', sans-serif;
+    font-size: 2em;
+    width: 100%;
+    height: 35%;
+    white-space: pre-line;
+    line-height: initial;
+    background-color: $custom-blue;
+}
+
+  
