@@ -41,7 +41,7 @@ export class HomepageComponent implements OnInit {
     console.log(sc);
     this.scrollTop=sc
    
-    if (sc>650)
+    if (sc>600)
     {
       this.render.addClass(this.card1.nativeElement,"fade-in-row")
       this.render.addClass(this.svgDown.nativeElement,"addDownAnimation")
