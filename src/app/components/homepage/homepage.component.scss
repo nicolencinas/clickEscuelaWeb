@@ -34,6 +34,24 @@
   
 
 }
+.second-card img{
+  transition: 0.5s ease-in-out;
+}
+.first-card img{
+  transition: 0.5s ease-in-out;
+}
+.third-card img{
+  transition: 0.5s ease-in-out;
+}
+.first-card:hover img{
+  transform: translateX(-15%);
+
+}.second-card:hover img{
+  transform: translateY(15%);
+}
+.third-card:hover img{
+  transform: translateX(15%);
+}
 
 #circle1{
   animation-delay: 1s;
