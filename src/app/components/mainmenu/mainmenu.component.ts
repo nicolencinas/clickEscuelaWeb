@@ -25,10 +25,17 @@ import { HomepageComponent } from '../homepage/homepage.component';
 })
 export class MainmenuComponent implements OnInit {
 
-  constructor() { }
+  hamburgerMenu:boolean;
+
+  constructor() 
+  {
+    this.hamburgerMenu=false;
+  }
 
 
-  
+  changeButtonState(){
+    this.hamburgerMenu=!this.hamburgerMenu
+  }
 
   
 

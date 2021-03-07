@@ -12,17 +12,22 @@ export class HomepageComponent implements OnInit {
   @ViewChild('card1') card1: ElementRef;
   @ViewChild('svgUp') svgUp: ElementRef;
   @ViewChild('svgDown') svgDown: ElementRef;
+  @ViewChild('pathLines') pathLines: ElementRef;
+  @ViewChild('textLogo') textLogo: ElementRef;
+
 
   @ViewChild('document') document: ElementRef;
   @ViewChild('card2') card2: ElementRef;
-  @ViewChild('card3') card3: ElementRef;
+  @ViewChild('tilt1') tilt1: ElementRef;
 
   scrollTop:number;
+
+  selectedFirst:boolean;
 
 
   constructor(private render: Renderer2,private scroller: ScrollDispatcher)
   { 
-    
+    this.selectedFirst=false;
   }
 
  
@@ -46,11 +51,18 @@ export class HomepageComponent implements OnInit {
       this.render.addClass(this.card1.nativeElement,"fade-in-row")
       this.render.addClass(this.svgDown.nativeElement,"addDownAnimation")
       this.render.addClass(this.svgUp.nativeElement,"addUpAnimation")
+      this.render.addClass(this.pathLines.nativeElement,"animate-conectors")
+      this.render.addClass(this.textLogo.nativeElement,"text-logo")
+
     
     }else{
       this.render.removeClass(this.card1.nativeElement,"fade-in-row")
       this.render.removeClass(this.svgDown.nativeElement,"addDownAnimation")
       this.render.removeClass(this.svgUp.nativeElement,"addUpAnimation")
+      this.render.removeClass(this.pathLines.nativeElement,"animate-conectors")
+      this.render.removeClass(this.textLogo.nativeElement,"text-logo")
+
+
     }
 
      if(sc>1200)
@@ -66,21 +78,20 @@ export class HomepageComponent implements OnInit {
     
   }
 
-  ngAfterViewInit()
-  {
+ 
 
-  
+  ngAfterViewInit() {
+    VanillaTilt.init(this.tilt1.nativeElement, {
+      max: 15,
+      speed: 400,
+      perspective:2000
+    });
+}
 
-   
-  }
-
-  // ngAfterViewInit() {
-  //   VanillaTilt.init(this.card1.nativeElement, {
-  //     max: 15,
-  //     speed: 400,
-  //     perspective:2000
-  //   });
-
+selectFirst()
+{
+  this.selectedFirst=!this.selectedFirst;
+}
   //   VanillaTilt.init(this.card2.nativeElement, {
   //     max: 15,
   //     speed: 400,

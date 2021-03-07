@@ -34,6 +34,19 @@
   
 
 }
+
+.svg-down img{
+  transition: 0.5s ease-in-out;
+}
+.svg-up img{
+  transition: 0.5s ease-in-out;
+}
+.svg-down img:hover{
+  transform: scale(1.4);
+}
+.svg-up img:hover{
+  transform: scale(1.4);
+}
 .second-card img{
   transition: 0.5s ease-in-out;
 }
@@ -187,6 +200,18 @@
       filter: drop-shadow(2px 2px 6px rgba(0, 0, 0, 0.411));
   }
 
+  //Proporcionando index
+
+  .first-card{
+    z-index: 15;
+  }
+  .second-card{
+    z-index: 14;
+  }
+
+  .third-card{
+    z-index: 13;
+  }
   
 
   .first-card img
@@ -569,7 +594,7 @@ svg{
 .animate-conectors path
 {
   transform-origin: center center;
-  animation: dashOffset 6s ease-in-out 1.5s , showLogo 1.5s ease-in-out 6.5s;
+  animation: dashOffset 6s ease-in-out 0s , showLogo 1.5s ease-in-out 5s;
   animation-fill-mode: forwards;
   
   stroke-dasharray: 852;
@@ -585,13 +610,13 @@ svg{
 .hls-3
 {
   width: 0;
-  animation: lineWidth 0.5s  ease-in-out 6.5s forwards; }
+  animation: lineWidth 0.5s  ease-in-out 5s forwards; }
 
   
 
-circle, ellipse{
+.animate-conectors circle, .animate-conectors ellipse{
   fill-opacity: 0;
-  animation: showLogo 1.5s ease-in-out 7.5s forwards;
+  animation: showLogo 1.5s ease-in-out 6s forwards;
 }
 
 .click-motion{
@@ -614,7 +639,7 @@ circle, ellipse{
 
 .text-logo{
   animation: showLogo2 4s ease-in-out forwards;
-  animation-delay: 6.5s;
+  animation-delay: 5s;
 }
 
 @keyframes blurring {
@@ -798,4 +823,99 @@ circle, ellipse{
   }
 }
 
-  
+//Probando animaciones para mostrar info{
+  .second-card.stack-card{
+    will-change: transform;
+    transform: perspective(1000px) rotateY(-13deg) scale3d(0.9,0.9,0.9) !important;
+  }
+
+  .third-card.stack-card{
+    will-change: transform;
+    transform: perspective(1000px) rotateY(-13deg) scale3d(0.9,0.9,0.9)!important;
+  }
+
+@media (max-width: 960px){
+  .mycard{
+    width: 100%;
+  }
+  .second-card img
+  {
+    bottom: -2px;
+  }
+
+}
+
+@media (max-width: 767px)
+{
+  .second-row{
+    flex-direction: column;
+    width: 70%;
+  }
+
+  .second-row .col-12{
+    margin-bottom: 2em;
+    
+  }
+  .mycard{
+    height: 250px;
+  }
+
+  .mycard .second-card{
+    justify-content: center;
+  }
+
+  .mycard.second-card img{
+    justify-content: center;
+    width: 50% !important;
+    right: 0;
+  }
+
+  .teacher-span{
+    width: 50% !important;
+  }
+
+
+  .second-row .col-12 img{
+    width: 75%;
+
+
+  }
+  .mycard{
+    width: 100%;
+  }
+  .second-card img
+  {
+    bottom: -2px;
+  }
+
+  .svg-down.addDownAnimation, .svg-up.addUpAnimation{
+    display: none !important;
+  }
+
+  .title-body{
+    background-color: $green;
+  }
+
+  .third-row{
+    width: 90%;
+  }
+
+}
+
+@media (max-width: 500px){
+  .second-row{
+    flex-direction: column;
+    width:100%;
+  }
+
+  .first-card img{
+    left: -10%;
+  }
+
+  .third-card img{
+    right: -10%;
+  }
+
+ 
+}
+
