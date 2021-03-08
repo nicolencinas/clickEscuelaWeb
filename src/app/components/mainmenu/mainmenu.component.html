@@ -2,19 +2,22 @@
     <div class="menu-item" id="homepage">
         <img src="../../../assets/images/logo.svg" alt="">
     </div>
-    <div class="menu-option-container">
+    <div class="menu-option-container" [ngClass]="{'show-menu': hamburgerMenu }">
         <div class="menu-option">
-        <span>Nosotros</span>
+        <span><i class="fas fa-users"></i><p>Nosotros</p></span>
     </div>
     <div class="menu-option">
-        <span>Descargas</span>
+        <span><i class="fas fa-shopping-cart"></i><p>Compras</p></span>
     </div>
     <div class="menu-option">
-        <span>Soporte</span>
+        <span><i class="fab fa-whmcs"></i><p>Soporte</p></span>
     </div>
     <div class="menu-option">
-        <span>Noticias</span>
+        <span><i class="fas fa-newspaper"></i> <p>Noticias</p></span>
     </div> 
+    <div class="menu-option">
+      <span> <i class="fas fa-envelope"></i><p>Contacto</p></span>
+  </div>
     </div>
 
     <button class="hamburger-menu-trigger" [ngClass]="{'openMenu': hamburgerMenu}" (click)="changeButtonState()">

@@ -23,11 +23,16 @@ export class HomepageComponent implements OnInit {
   scrollTop:number;
 
   selectedFirst:boolean;
+  selectedSecond:boolean;
+  selectedThird:boolean;
+
 
 
   constructor(private render: Renderer2,private scroller: ScrollDispatcher)
   { 
     this.selectedFirst=false;
+    this.selectedSecond=false;
+    this.selectedThird=false;
   }
 
  
@@ -91,6 +96,34 @@ export class HomepageComponent implements OnInit {
 selectFirst()
 {
   this.selectedFirst=!this.selectedFirst;
+  if (this.selectedFirst)
+  {
+
+    this.selectedThird=false;
+    this.selectedSecond=false;
+
+  }
+}
+
+selectSecond()
+{
+  this.selectedSecond=!this.selectedSecond;
+  if (this.selectedSecond)
+  {
+    this.selectedFirst=false;
+    this.selectedThird=false;
+  }
+}
+
+selectThird()
+{
+  this.selectedThird=!this.selectedThird;
+  if (this.selectedThird){
+
+    this.selectedSecond=false;
+    this.selectedFirst=false
+  }
+
 }
   //   VanillaTilt.init(this.card2.nativeElement, {
   //     max: 15,

@@ -828,7 +828,31 @@ svg{
 
   
 
-@media (max-width: 960px){
+@media (max-width: 960px)
+{
+  .card-info{
+    width: 100% !important;
+  }
+  
+  .mycard.first-card.stack-card{
+    transform: translateX(200%) !important;
+  }
+  .card-info.show-info{
+    transform: translate(0);
+    opacity: 1;
+  }
+
+  
+  .third-card.third-card.stack-card-left{
+    transform: translateX(-200%) !important;
+  }
+  .card-third-info{
+    width: 100% !important;
+  }
+  .card-third-info.show-third-info{
+    transform: translate(0);
+    opacity: 1;
+  }
   .mycard{
     width: 100%;
   }
@@ -997,22 +1021,31 @@ section{
 }
 
 //Para poder hacerla vista en mobiile cambiar la transision 3d a un translateX o Y segun corresponda dentro del mediaQuuerie
-//Y quitar el translate de showinfo solo dejar 
+//Y quitar el translate de showinfo solo dejar  Sumale 2 hs   
 .show-info{
   opacity: 1;
-  transform: translateX(93.5%);
+  transform: translateX(25.5vw);
+}
+
+@media(max-width:961px){
+  .show-info{
+    opacity: 1;
+    transform: translateX(31vw);
+  }
+  
 }
 
 .show-third-info{
   opacity: 1;
-  transform: translateX(-90%);
+  transform: translateX(-25vw);
 }
 
 .first-card.stack-card{
   will-change: transform;
   transform: perspective(1000px) rotateY(-13deg) scale3d(0.9,0.9,0.9) !important;
 }
-.second-card.stack-card{
+.second-card.stack-card
+{
   will-change: transform;
   transform: perspective(1000px) rotateY(-13deg) scale3d(0.9,0.9,0.9) translateX(200px) !important;
 }

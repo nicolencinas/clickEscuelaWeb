@@ -14,15 +14,20 @@
 
   <div class="second-row" >
     <div class="col-12 col-md-4"  >
-      <div class="mycard first-card" (click)="selectFirst()"   >
+      <div class="mycard first-card" (click)="selectFirst()" [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird}"   >
         
         <span> <p class="span-title">Interfaz de padres:</p> Interfaz pensada para el control de las notas, ausencias y boletines de sus hijos durante todo el ciclo escolar</span>
         <img src="../../../assets/images/background1-second-image.png" alt="">
       </div>
+
+      <div class="card-info" (click)="selectFirst()" [ngClass]="{'show-info': selectedFirst}">
+        
+      </div>
+      
     </div>
     <div class="col-12 col-md-4">
       
-      <div class="mycard second-card" [ngClass]="{'stack-card': selectedFirst}">
+      <div class="mycard second-card" (click)="selectSecond()" [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird}">
         <span class="teacher-span"> <p class="span-title">Interfaz de Profesores</p>Las vistas del profesor estan pensadas para la administracion de las clases y control de las tareas asignadas </span>
         <img class="teacher-img" src="../../../assets/images/background1-first-image.png" alt="">
 
@@ -30,11 +35,35 @@
       </div>
     </div>
     <div class="col-12 col-md-4">
-      <div class="mycard third-card" [ngClass]="{'stack-card': selectedFirst}">
+      <div class="mycard third-card" (click)="selectThird()" [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird}">
         <span> <p class="span-title">Interfaz de Alumnos</p>Las vistas del profesor estan pensadas para la administracion de las clases y control de las tareas asignadas </span>
         <img src="../../../assets/images/background1-third-image.png" alt="">
-
+        <button  >ver mas</button>
       </div>
+
+      <div class="card-third-info" (click)="selectThird()" [ngClass]="{'show-third-info': selectedThird}">
+        <span >
+          Student:
+          <section class="section-info">
+
+            <span style="color: black;">*Material de estudio online: Podra descargar material de estudio que estara disponible en la biblioteca virtual.</span>
+          </section>
+          <section class="section-info">
+
+            <span>*Interaccion de grupos de trabajo practico: Podra interactuar con sus compañeros y profesor sobre trabajos practicos ya sea agregando comentarios o subiendo los avances del mismo.</span>
+          </section>
+          <section class="section-info">
+
+            <span>*Mensajeria: Podra enviar mensajes con sus compañeros y profesores a traves del chat.</span>
+          </section>
+          
+        </span>
+          
+
+          
+      </div>
+
+      
     </div>
   </div>
 
