@@ -824,15 +824,9 @@ svg{
 }
 
 //Probando animaciones para mostrar info{
-  .second-card.stack-card{
-    will-change: transform;
-    transform: perspective(1000px) rotateY(-13deg) scale3d(0.9,0.9,0.9) !important;
-  }
 
-  .third-card.stack-card{
-    will-change: transform;
-    transform: perspective(1000px) rotateY(-13deg) scale3d(0.9,0.9,0.9)!important;
-  }
+
+  
 
 @media (max-width: 960px){
   .mycard{
@@ -844,9 +838,22 @@ svg{
   }
 
 }
+.mycard.col-md-4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mycard button{
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    padding: 15px;
+  }
 
 @media (max-width: 767px)
 {
+  
   .second-row{
     flex-direction: column;
     width: 70%;
@@ -918,4 +925,114 @@ svg{
 
  
 }
+.first-card{
+  z-index: 9;
+  position: relative;
+}
 
+.second-card{
+  z-index:7;
+}
+
+.third-card{
+  z-index: 5;
+}
+
+.card-info,.card-third-info{
+  display: inline-flex;
+  width: 80%;
+  height: 100%;
+  background-color: $custom-blue;
+  z-index: 8;
+  position: absolute;
+border-radius: 0.5em;
+top: 0;
+left: 0;
+z-index: 8;
+opacity: 0;
+transition: 0.5s ease-in-out;
+}
+.mycard.third-card.stack-card-left{
+  z-index: 12;
+}
+.card-third-info{z-index: 9;}
+
+.card-third-info.show-third-info
+{
+  z-index:10 !important ;
+}
+
+section{
+  width: 100%;
+  padding: 10px;
+}
+
+.section-info span{
+  width: 60%;
+}
+
+.card-third-info section:first-child{
+  background-color: whitesmoke;
+  
+  
+}
+
+.card-third-info section:nth-child(2){
+  background-color: $green;
+  
+}
+
+.card-third-info section:last-child
+{
+  background-color: $custom-blue;
+}
+
+.card-third-info section:first-child{
+  background-color: whitesmoke;
+  
+}
+
+.card-third-info{
+  z-index: 4;
+}
+
+//Para poder hacerla vista en mobiile cambiar la transision 3d a un translateX o Y segun corresponda dentro del mediaQuuerie
+//Y quitar el translate de showinfo solo dejar 
+.show-info{
+  opacity: 1;
+  transform: translateX(93.5%);
+}
+
+.show-third-info{
+  opacity: 1;
+  transform: translateX(-90%);
+}
+
+.first-card.stack-card{
+  will-change: transform;
+  transform: perspective(1000px) rotateY(-13deg) scale3d(0.9,0.9,0.9) !important;
+}
+.second-card.stack-card{
+  will-change: transform;
+  transform: perspective(1000px) rotateY(-13deg) scale3d(0.9,0.9,0.9) translateX(200px) !important;
+}
+
+.third-card.stack-card{
+  will-change: transform;
+  transform: perspective(1000px) rotateY(-13deg) scale3d(0.9,0.9,0.9)!important;
+}
+
+.first-card.stack-card-left{
+  will-change: transform;
+  transform: perspective(1000px) rotateY(13deg) scale3d(0.9,0.9,0.9) !important;
+}
+.second-card.stack-card-left{
+  z-index: 9;
+  will-change: transform;
+  transform: perspective(1000px) rotateY(13deg) scale3d(0.9,0.9,0.9) translateX(-200px) !important;
+}
+
+.third-card.stack-card-left{
+  will-change: transform;
+  transform: perspective(1000px) rotateY(13deg) scale3d(0.9,0.9,0.9)!important;
+}
