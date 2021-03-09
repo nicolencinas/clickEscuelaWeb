@@ -172,13 +172,7 @@
       border-radius: 0.2em;
   }
 
-  .mycard:hover{
-      transform: scale(1.05);
-      transform: rotate3d(15deg);
-      background-color: #2d5b84;
-
-      
-  }
+  
 
   .mycard:hover{
     box-shadow: 12px 12px 12px 2px #2d5b8465;
@@ -962,7 +956,7 @@ svg{
   z-index: 5;
 }
 
-.card-info,.card-third-info{
+.card-info,.card-third-info,.card-second-info{
   display: inline-flex;
   width: 80%;
   height: 100%;
@@ -976,6 +970,11 @@ z-index: 8;
 opacity: 0;
 transition: 0.5s ease-in-out;
 }
+
+.card-second-info{
+  opacity: 1;
+  width: 100%;
+}
 .mycard.third-card.stack-card-left{
   z-index: 12;
 }
@@ -983,8 +982,22 @@ transition: 0.5s ease-in-out;
 
 .card-third-info.show-third-info
 {
-  z-index:10 !important ;
+  z-index:12 !important ;
 }
+
+.card-flip-container.to-top{
+  z-index: 9;
+}
+
+.card-flip-container.to-bottom{
+  z-index: 8;
+}
+
+.card-info.show-info{
+  z-index: 9;
+}
+
+
 
 section{
   width: 100%;
@@ -993,20 +1006,58 @@ section{
 
 .section-info span{
   width: 60%;
+  color: black;
 }
 
 .card-third-info section:first-child{
   background-color: whitesmoke;
-  
-  
 }
 
 .card-third-info section:nth-child(2){
-  background-color: $green;
+  background-color: #9acd8d;
   
 }
 
+.card-second-info section:first-child{
+  background-color: whitesmoke;
+}
+
+.card-second-info section:nth-child(2){
+  background-color: #9acd8d;
+  
+}
+
+.card-info section:nth-child(2){
+  background-color: #9acd8d;
+  
+}
+
+section.section-info{
+    box-shadow: 0px -4px 7px -5px black;
+    border-radius: 3px 3px 0px 0px;
+    margin-top: -2px;
+}
+
 .card-third-info section:last-child
+{
+  background-color: $custom-blue;
+}
+//estilos para card-info
+.card-info section:first-child{
+  background-color: whitesmoke;
+}
+section
+{
+  text-align: start;
+}
+b.titles{
+  font-family: 'BebasNeue',sans-serif;
+  font-size: 1.3em;
+  padding: 0.2em;
+  letter-spacing: 1px;
+}
+
+.card-info section:last-child
 {
   background-color: $custom-blue;
 }
@@ -1032,6 +1083,10 @@ section{
     opacity: 1;
     transform: translateX(31vw);
   }
+  #third-col{
+    margin-top: 17
+    em;
+  }
   
 }
 
@@ -1044,7 +1099,7 @@ section{
   will-change: transform;
   transform: perspective(1000px) rotateY(-13deg) scale3d(0.9,0.9,0.9) !important;
 }
-.second-card.stack-card
+.second-card.card-flip.stack-card
 {
   will-change: transform;
   transform: perspective(1000px) rotateY(-13deg) scale3d(0.9,0.9,0.9) translateX(200px) !important;
@@ -1059,7 +1114,7 @@ section{
   will-change: transform;
   transform: perspective(1000px) rotateY(13deg) scale3d(0.9,0.9,0.9) !important;
 }
-.second-card.stack-card-left{
+.second-card.card-flip.stack-card-left{
   z-index: 9;
   will-change: transform;
   transform: perspective(1000px) rotateY(13deg) scale3d(0.9,0.9,0.9) translateX(-200px) !important;
@@ -1069,3 +1124,43 @@ section{
   will-change: transform;
   transform: perspective(1000px) rotateY(13deg) scale3d(0.9,0.9,0.9)!important;
 }
+
+//animaciones de flip card para el medio 
+
+.card-flip-container{
+  transform-style: preserve-3d;
+  position: relative;
+}
+
+.card-flip{
+  position: absolute;
+  transition: 0.5s ease-in-out;
+  backface-visibility: hidden;
+}
+
+
+.front{
+z-index: 99;
+transform: rotate(0);
+}
+
+.back{
+  transform: rotateY(180deg);
+  z-index: -99;
+}
+
+.mycard.second-card.card-flip.front.showback{
+  transform: rotateY(-180deg);
+}
+
+.mycard.card-flip.back.showback
+{
+  transform: rotateY(0deg);
+}
+
+.mycard.card-flip.back
+
+{
+  transform: rotateY(180deg);
+}
+
