@@ -21,20 +21,60 @@
       </div>
 
       <div class="card-info" (click)="selectFirst()" [ngClass]="{'show-info': selectedFirst}">
-        
+        <span >
+          Padres
+          <section class="section-info">
+
+            <span style="color: black;"><b class="titles">Asistencia:</b> Recibira diariamente la confirmacion de la asistencia de su hijo.</span>
+          </section>
+          <section class="section-info">
+
+            <span style="color: black;"><b class="titles">Notificacion:</b> Recibira notificaciones constantes de fechas de evaluaciones y el resultado de las mismas, adicionalmente recibira avisos generales con las novedades de la escuela. </span>
+          </section>
+          <section class="section-info">
+
+            <span><b class="titles">Mensajeria:</b> Podra interactuar con los profesores y consultar el cuaderno de comunicado vritual</span>
+          </section>
+          
+        </span>
       </div>
       
     </div>
     <div class="col-12 col-md-4">
       
-      <div class="mycard second-card" (click)="selectSecond()" [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird}">
+      <div class="card-flip-container" [ngClass]="{'to-top': selectedThird,'to-bottom':selectedFirst}">
+        <div class="mycard second-card card-flip front" (click)="selectSecond()" [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird, 'showback':selectedSecond}">
         <span class="teacher-span"> <p class="span-title">Interfaz de Profesores</p>Las vistas del profesor estan pensadas para la administracion de las clases y control de las tareas asignadas </span>
         <img class="teacher-img" src="../../../assets/images/background1-first-image.png" alt="">
-
-
       </div>
+
+      <div class="mycard card-flip back" (click)="selectSecond()" [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird, 'showback':selectedSecond}">
+        <div class="card-second-info" >
+          <span >
+            Profesores
+            <section class="section-info">
+  
+              <span style="color: black;"><b class="titles">Metricas</b>Podra visualizar graficos estadisticos  de las evaluaciones tanto general como particular.</span>
+            </section>
+            <section class="section-info">
+  
+              <span><b class="titles">Grupos de trabajo practico:</b> Podra interactuar con sus compañeros y profesor sobre trabajos practicos ya sea agregando comentarios o subiendo los avances del mismo.</span>
+            </section>
+            <section class="section-info">
+  
+              <span><b class="titles">Mensajeria:</b> Podra enviar mensajes con sus compañeros y profesores a traves del chat.</span>
+            </section>
+            
+          </span>
+            
+  
+            
+        </div>
+      </div>
+      </div>
+      
     </div>
-    <div class="col-12 col-md-4">
+    <div class="col-12 col-md-4" id="third-col">
       <div class="mycard third-card" (click)="selectThird()" [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird}">
         <span> <p class="span-title">Interfaz de Alumnos</p>Las vistas del profesor estan pensadas para la administracion de las clases y control de las tareas asignadas </span>
         <img src="../../../assets/images/background1-third-image.png" alt="">
@@ -43,18 +83,18 @@
 
       <div class="card-third-info" (click)="selectThird()" [ngClass]="{'show-third-info': selectedThird}">
         <span >
-          Student:
+          Estudiantes
           <section class="section-info">
 
-            <span style="color: black;">*Material de estudio online: Podra descargar material de estudio que estara disponible en la biblioteca virtual.</span>
+            <span style="color: black;"><b class="titles">Material de estudio online:</b> Podra descargar material de estudio que estara disponible en la biblioteca virtual.</span>
           </section>
           <section class="section-info">
 
-            <span>*Interaccion de grupos de trabajo practico: Podra interactuar con sus compañeros y profesor sobre trabajos practicos ya sea agregando comentarios o subiendo los avances del mismo.</span>
+            <span><b class="titles">Grupos de trabajo practico:</b> Podra interactuar con sus compañeros y profesor sobre trabajos practicos ya sea agregando comentarios o subiendo los avances del mismo.</span>
           </section>
           <section class="section-info">
 
-            <span>*Mensajeria: Podra enviar mensajes con sus compañeros y profesores a traves del chat.</span>
+            <span><b class="titles">Mensajeria:</b> Podra enviar mensajes con sus compañeros y profesores a traves del chat.</span>
           </section>
           
         </span>
