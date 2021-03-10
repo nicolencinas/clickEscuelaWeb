@@ -1,5 +1,5 @@
 import { ScrollDispatcher } from '@angular/cdk/scrolling';
-import { Component, OnInit, ViewChild, ElementRef, Renderer2, HostListener } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, HostListener, ViewChildren, QueryList } from '@angular/core';
 import VanillaTilt from 'vanilla-tilt';
 
 @Component({
@@ -20,11 +20,22 @@ export class HomepageComponent implements OnInit {
   @ViewChild('card2') card2: ElementRef;
   @ViewChild('tilt1') tilt1: ElementRef;
 
+  @ViewChildren ('pageSection') pages : QueryList<ElementRef>;
+
   scrollTop:number;
 
   selectedFirst:boolean;
   selectedSecond:boolean;
   selectedThird:boolean;
+
+  currentPage=0;
+
+  animationIsDone;
+
+  modernScroll=true;
+
+  scrollMode:string;
+
 
 
 
@@ -33,17 +44,102 @@ export class HomepageComponent implements OnInit {
     this.selectedFirst=false;
     this.selectedSecond=false;
     this.selectedThird=false;
+    this.animationIsDone=true;
+    
+    this.scrollMode=  this.modernScroll ? "Section Scroll" : "Normal Scroll" 
+    let root=document.documentElement
+
+    this.modernScroll ? root.style.setProperty('--scroll-view','none') : root.style.setProperty('--scroll-view','flex') 
+    
   }
 
+  changeScroll(){
+    this.modernScroll=!this.modernScroll
+    let root=document.documentElement
+
+    this.modernScroll ? root.style.setProperty('--scroll-view','none') : root.style.setProperty('--scroll-view','flex') 
+    
+  }
+
+  scrollUp(){
+    console.log("se esta haciendo scroll arriba")
+  }
  
 
 
   ngOnInit() 
   {
     window.addEventListener('scroll', this.scrolling, true);
+
+    window.addEventListener('wheel', this.wheelingUp, { passive: false});
+  }
+  
+  
+  wheelingUp=(s)=>
+  {
+    
+    if(this.modernScroll)
+    {
+ s.preventDefault()
+  s.stopPropagation()
+    console.log(this.animationIsDone)
+
+    if (this.animationIsDone)
+    {
+      
+ if (s.wheelDelta>0){
+      if (this.currentPage==0)
+      {
+        this.currentPage=this.pages.length
+      }
+      else{
+        this.currentPage--;
+      }
+
+      
+      const offset=this.pages.last.nativeElement.clientHeight*this.currentPage;
+      
+      document.body.scrollTop=offset
+      console.log('Haciendo Wheel Arriba Page: ' +this.currentPage)
+      
+    }
+
+    if (s.wheelDelta<0)
+    {
+      
+      if (this.currentPage==this.pages.length)
+      {
+        this.currentPage=0
+      }
+      else{
+        this.currentPage++;
+      }
+
+      console.log('Haciendo Wheel Abajo Page: ' +this.currentPage)
+      
+      const offset=this.pages.last.nativeElement.clientHeight*this.currentPage-25;
+      
+      document.body.scrollTop=offset
+    }
+
+    
   }
 
+    }
+   
+   
+
+    
+
+  }
+
+  getScrollMode(){
+    return this.modernScroll ? 'Scroll Section' : "Normal Scroll" 
+  }
  
+  showInfo(){
+    console.log(this.animationIsDone)
+  }
 
   scrolling=(s)=>
   {
@@ -51,7 +147,7 @@ export class HomepageComponent implements OnInit {
     console.log(sc);
     this.scrollTop=sc
    
-    if (sc>600)
+    if (sc>723)
     {
       this.render.addClass(this.card1.nativeElement,"fade-in-row")
       this.render.addClass(this.svgDown.nativeElement,"addDownAnimation")
@@ -72,12 +168,10 @@ export class HomepageComponent implements OnInit {
 
      if(sc>1200)
     {
-      console.log(this.card2)
       this.render.addClass(this.card2.nativeElement,"fade-in-row")
     }
     else
     {
-      console.log(this.card2)
       this.render.removeClass(this.card2.nativeElement,"fade-in-row")
     }
     
@@ -85,13 +179,13 @@ export class HomepageComponent implements OnInit {
 
  
 
-  ngAfterViewInit() {
-    VanillaTilt.init(this.tilt1.nativeElement, {
-      max: 15,
-      speed: 400,
-      perspective:2000
-    });
-}
+//   ngAfterViewInit() {
+//     VanillaTilt.init(this.tilt1.nativeElement, {
+//       max: 15,
+//       speed: 400,
+//       perspective:2000
+//     });
+// }
 
 selectFirst()
 {

@@ -1167,13 +1167,62 @@ transform: rotate(0);
   transform: rotateY(180deg);
 }
 
+.row.third-row{
+  margin-top: 100px;
+  margin-bottom: 0;
+}
+
 .container-section{
   width: 100vw;
   height: 100vh;
   background-color: aqua;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+.container-section:first-child
+{
+  background: url(../../../assets/images/background.png);
+  background-size: cover;
+  align-items: flex-start;
 
+}
 .container-section:nth-child(2){
-  background: url(../../../assets/images/4820571.jpg)
+  background: url(../../../assets/images/background-section-2.png);
+  background-size: cover;
 }
 
+.second-row
+{
+  width: 94%;
+  padding: 4em;
+  background-color: #175d9169;
+  backdrop-filter: blur(15px);
+  border-radius: 1em;
+}
+
+.scroll-type
+{
+  display: flex;
+  position: fixed;
+  right: 2em;
+  z-index: 9999;
+  width:40px;
+  height: 40px;
+  top: 2em;
+  cursor: pointer;
+}
+
+#center{
+  transition: 0.5s ease-in-out;
+  transform-origin: 50% 25px;
+}
+
+ #center.normal-scroll
+{
+ transform: scaleX(0);
+}
+
+::ng-deep body::-webkit-scrollbar{
+  display: var(--scroll-view) !important;
+}
