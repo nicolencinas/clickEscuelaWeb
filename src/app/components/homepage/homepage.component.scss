@@ -982,7 +982,11 @@ transition: 0.5s ease-in-out;
 
 .card-third-info.show-third-info
 {
-  z-index:12 !important ;
+  z-index:10 ;
+}
+
+.stack-card-left{
+
 }
 
 .card-flip-container.to-top{
@@ -1114,7 +1118,7 @@ b.titles{
   transform: perspective(1000px) rotateY(13deg) scale3d(0.9,0.9,0.9) !important;
 }
 .second-card.card-flip.stack-card-left{
-  z-index: 9;
+  z-index: -1;
   will-change: transform;
   transform: perspective(1000px) rotateY(13deg) scale3d(0.9,0.9,0.9) translateX(-200px) !important;
 }
@@ -1161,5 +1165,15 @@ transform: rotate(0);
 
 {
   transform: rotateY(180deg);
+}
+
+.container-section{
+  width: 100vw;
+  height: 100vh;
+  background-color: aqua;
+}
+
+.container-section:nth-child(2){
+  background: url(../../../assets/images/4820571.jpg)
 }
 

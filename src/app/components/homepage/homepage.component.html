@@ -1,7 +1,8 @@
 <app-mainmenu></app-mainmenu>
 
 <div class="container principal" style="margin-top: 142px;" >
-  <div class="row first-row">
+  <section class="container-section">
+<div class="row first-row">
     <div class="fade-in">
       <img id="f1" src="../../../assets/images/background1-first-image.png" alt="">
     <img id="f2" src="../../../assets/images/background1-second-image.png" alt="">
@@ -11,8 +12,10 @@
     <img class="welcome" src="../../../assets/images/welcome.svg" alt="">
     
   </div>
+  </section>
 
-  <div class="second-row" >
+  <section class="container-section">
+    <div class="second-row" >
     <div class="col-12 col-md-4"  >
       <div class="mycard first-card" (click)="selectFirst()" [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird}"   >
         
@@ -106,6 +109,10 @@
       
     </div>
   </div>
+  </section>
+  
+
+  
 
   <div class="row third-row" #card1>
     <div class="col-12 col-md-4">
