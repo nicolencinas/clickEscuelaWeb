@@ -1226,3 +1226,48 @@ transform: rotate(0);
 ::ng-deep body::-webkit-scrollbar{
   display: var(--scroll-view) !important;
 }
+
+
+//Estilos para boton ver mas
+
+
+.view-more{
+  width: 60px;
+  height: 60px;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  border:none;
+  background-color: #7c9cb4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.view-more svg{
+  width: 110%;
+  position: relative;
+}
+
+#semicircle, #cross{
+  fill:#9acd8d;
+  transition: 0.5s ease-in-out;
+  transform-origin: center;
+}
+
+#semicircle.cancel,#cross.cancel {
+  fill: red;
+}
+#semicircle.cancel{
+  transform: rotate(125deg);
+}
+#cross.cancel{
+  transform: rotate(45deg);
+}
+
+.mycard span{
+  height: 100%;
+}
