@@ -871,7 +871,10 @@ svg{
 
 @media (max-width: 767px)
 {
-  
+  #third-col{
+    margin-top: 17em;
+  }
+
   .second-row{
     flex-direction: column;
     width: 70%;
@@ -982,7 +985,7 @@ transition: 0.5s ease-in-out;
 
 .card-third-info.show-third-info
 {
-  z-index:12 !important ;
+  z-index:10 !important ;
 }
 
 .card-flip-container.to-top{
@@ -1083,9 +1086,7 @@ b.titles{
     opacity: 1;
     transform: translateX(31vw);
   }
-  #third-col{
-    margin-top: 17em;
-  }
+ 
   
 }
 
@@ -1114,7 +1115,7 @@ b.titles{
   transform: perspective(1000px) rotateY(13deg) scale3d(0.9,0.9,0.9) !important;
 }
 .second-card.card-flip.stack-card-left{
-  z-index: 9;
+  z-index: -1;
   will-change: transform;
   transform: perspective(1000px) rotateY(13deg) scale3d(0.9,0.9,0.9) translateX(-200px) !important;
 }
@@ -1163,3 +1164,40 @@ transform: rotate(0);
   transform: rotateY(180deg);
 }
 
+
+.view-more{
+  width: 60px;
+  height: 60px;
+  text-decoration: none;
+  background-color: transparent;
+  outline: none;
+  border:none;
+  background-color: #7c9cb4;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  
+}
+
+.view-more svg{
+  width: 110%;
+  position: relative;
+}
+
+#semicircle, #cross{
+  fill:#9acd8d;
+  transition: 0.5s ease-in-out;
+  transform-origin: center;
+}
+
+#semicircle.cancel,#cross.cancel {
+  fill: red;
+}
+#semicircle.cancel{
+  transform: rotate(125deg);
+}
+#cross.cancel{
+  transform: rotate(45deg);
+}
