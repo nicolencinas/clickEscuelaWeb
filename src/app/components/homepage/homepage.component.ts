@@ -14,6 +14,8 @@ export class HomepageComponent implements OnInit {
   @ViewChild('svgDown') svgDown: ElementRef;
   @ViewChild('pathLines') pathLines: ElementRef;
   @ViewChild('textLogo') textLogo: ElementRef;
+  @ViewChild('pageNumber') pageNumber: ElementRef;
+
 
 
   @ViewChild('document') document: ElementRef;
@@ -53,6 +55,11 @@ export class HomepageComponent implements OnInit {
     
   }
 
+  changePage(page){
+    this.currentPage=page;
+    this.scrollPage()
+  }
+
   changeScroll(){
     this.modernScroll=!this.modernScroll
     let root=document.documentElement
@@ -61,17 +68,54 @@ export class HomepageComponent implements OnInit {
     
   }
 
-  scrollUp(){
-    console.log("se esta haciendo scroll arriba")
-  }
+
  
 
 
   ngOnInit() 
   {
+    let root=document.documentElement
+    root.style.setProperty('--opacity-var','0')
     window.addEventListener('scroll', this.scrolling, true);
 
     window.addEventListener('wheel', this.wheelingUp, { passive: false});
+    window.addEventListener('keyup', this.keyNavigation,true)
+  }
+
+  keyNavigation=(s)=>
+  {
+    if (this.modernScroll)
+    {
+      s.preventDefault()
+      s.stopPropagation()
+
+     if(s.key=='ArrowUp')
+     {
+      if (this.currentPage==0)
+      {
+        this.currentPage=this.pages.length
+      }
+      else{
+        this.currentPage--;
+      }
+
+      this.scrollPage()
+
+     }
+     if(s.key=='ArrowDown')
+     {
+      if (this.currentPage==this.pages.length)
+      {
+        this.currentPage=0
+      }
+      else{
+        this.currentPage++;
+      }
+
+      this.scrollPage()
+
+     }
+    }
   }
   
   
@@ -82,7 +126,6 @@ export class HomepageComponent implements OnInit {
     {
  s.preventDefault()
   s.stopPropagation()
-    console.log(this.animationIsDone)
 
     if (this.animationIsDone)
     {
@@ -100,7 +143,6 @@ export class HomepageComponent implements OnInit {
       const offset=this.pages.last.nativeElement.clientHeight*this.currentPage;
       
       document.body.scrollTop=offset
-      console.log('Haciendo Wheel Arriba Page: ' +this.currentPage)
       
     }
 
@@ -115,11 +157,9 @@ export class HomepageComponent implements OnInit {
         this.currentPage++;
       }
 
-      console.log('Haciendo Wheel Abajo Page: ' +this.currentPage)
       
-      const offset=this.pages.last.nativeElement.clientHeight*this.currentPage-25;
+      this.scrollPage();
       
-      document.body.scrollTop=offset
     }
 
     
@@ -131,20 +171,22 @@ export class HomepageComponent implements OnInit {
 
     
 
+  }
+
+  scrollPage()
+  {
+    const offset=this.pages.last.nativeElement.clientHeight*this.currentPage-25;
+    document.body.scrollTop=offset
   }
 
   getScrollMode(){
     return this.modernScroll ? 'Scroll Section' : "Normal Scroll" 
   }
- 
-  showInfo(){
-    console.log(this.animationIsDone)
-  }
+
 
   scrolling=(s)=>
   {
     let sc = s.target.scrollTop;
-    console.log(sc);
     this.scrollTop=sc
    
     if (sc>723)
@@ -166,7 +208,7 @@ export class HomepageComponent implements OnInit {
 
     }
 
-     if(sc>1200)
+     if(sc>1446)
     {
       this.render.addClass(this.card2.nativeElement,"fade-in-row")
     }
@@ -175,6 +217,7 @@ export class HomepageComponent implements OnInit {
       this.render.removeClass(this.card2.nativeElement,"fade-in-row")
     }
     
+    this.calculatePage(sc,this.pages.last.nativeElement.clientHeight);
   }
 
  
@@ -231,5 +274,46 @@ selectThird()
   //     speed: 400
   //   });
   // }
+calculatePage(sc,height) 
+{
+  let calcPage=(Math.floor((sc-100)/height)+1)
 
+  if (!this.modernScroll)
+  {
+  if(calcPage!=this.currentPage)
+  {
+
+   this.currentPage=calcPage
+   
+   console.log(this.currentPage)
+
+  
+  }
+  }
+ 
+
+  let root=document.documentElement
+  
+
+  let perPage=90/this.pages.length
+  let hue=300/this.pages.length;
+
+  let top=perPage*this.currentPage
+  let huerotate=hue*this.currentPage
+
+  root.style.setProperty('--page-top',top+'vh')
+  root.style.setProperty('--hue-color',huerotate+'deg')
+
+  if (this.currentPage>0){root.style.setProperty('--opacity-var','1')
+} 
+else{
+  root.style.setProperty('--opacity-var','0')
 }
+  
+
+  
+  
+}
+}
+
+

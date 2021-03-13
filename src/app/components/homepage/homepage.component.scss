@@ -81,9 +81,10 @@
   to{transform: rotate(360deg);}
 }
 .fade-in img{
-    width: auto;
-    height: 100%;
+    width: 247px;
+    height: auto;
     position: absolute;
+    bottom: 0;
 }
 
 .container.principal{
@@ -871,7 +872,9 @@ svg{
 
 @media (max-width: 767px)
 {
-  
+  #third-col{
+    margin-top: 17em;
+  }
   .second-row{
     flex-direction: column;
     width: 70%;
@@ -1087,9 +1090,7 @@ b.titles{
     opacity: 1;
     transform: translateX(31vw);
   }
-  #third-col{
-    margin-top: 17em;
-  }
+  
   
 }
 
@@ -1184,13 +1185,66 @@ transform: rotate(0);
 {
   background: url(../../../assets/images/background.png);
   background-size: cover;
-  align-items: flex-start;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+
+
 
 }
 .container-section:nth-child(2){
   background: url(../../../assets/images/background-section-2.png);
   background-size: cover;
 }
+.container-section:nth-child(3){
+  background: url(../../../assets/images/background-section-1.png);
+  background-size: cover;
+}
+
+.title-body{
+  background-color: $green;
+}
+.explain-info{
+  background-color: $blue-gray-2;
+}
+
+.arrow-svg{
+  width: 30px;
+}
+
+#arrow1,#arrow2,#arrow3{
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  animation: arrowOpacity 1s ease-in-out 0s infinite alternate;
+}
+#arrow2{
+  animation-delay: 0.33s;
+
+}
+#arrow3{
+  animation-delay: 0.66s;
+}
+
+@keyframes arrowOpacity{
+  from{ opacity: 0;}
+  to{
+    opacity: 1;
+  }
+}
+
+.start-way{
+  background-color: $green;
+  font-family: 'BebasNeue', sans-serif;
+}
+
+::ng-deep .mat-button-wrapper{
+  font-family: 'BebasNeue', sans-serif;
+  font-size: 1.2em;
+}
+
+
+
 
 .second-row
 {
@@ -1271,3 +1325,39 @@ transform: rotate(0);
 .mycard span{
   height: 100%;
 }
+
+
+.page-number{
+  background-color: $custom-blue-glass;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  padding: 0.5em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  top: var(--page-top);
+  transition: 0.5s ease-in-out;
+  filter: hue-rotate(var(--hue-color));
+  right: 1em;;
+ z-index: 88888;
+ opacity: var(--opacity-var);
+}
+
+h5{
+  font-size: 1.5em;
+  color:$custom-blue;
+  font-family: "TenorSans", sans-serif;
+  padding: 0.6em;
+
+}
+
+.titleh5, h5{
+  background-color: $blue-gray-2;
+  color: $blue-A;
+  border-radius: 1em;
+  padding-left: 2em;
+}
+
