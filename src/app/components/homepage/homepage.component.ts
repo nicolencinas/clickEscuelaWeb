@@ -15,6 +15,8 @@ export class HomepageComponent implements OnInit {
   @ViewChild('pathLines') pathLines: ElementRef;
   @ViewChild('textLogo') textLogo: ElementRef;
   @ViewChild('pageNumber') pageNumber: ElementRef;
+  @ViewChild('pageTitle') pageTitle: ElementRef;
+
 
 
 
@@ -38,6 +40,8 @@ export class HomepageComponent implements OnInit {
 
   scrollMode:string;
 
+  currentTitle:string;
+
 
 
 
@@ -52,6 +56,7 @@ export class HomepageComponent implements OnInit {
     let root=document.documentElement
 
     this.modernScroll ? root.style.setProperty('--scroll-view','none') : root.style.setProperty('--scroll-view','flex') 
+    this.currentTitle="Bienvenidos"
     
   }
 
@@ -129,7 +134,7 @@ export class HomepageComponent implements OnInit {
 
     if (this.animationIsDone)
     {
-      
+      this.animationIsDone=false;
  if (s.wheelDelta>0){
       if (this.currentPage==0)
       {
@@ -140,9 +145,7 @@ export class HomepageComponent implements OnInit {
       }
 
       
-      const offset=this.pages.last.nativeElement.clientHeight*this.currentPage;
-      
-      document.body.scrollTop=offset
+      this.scrollPage()
       
     }
 
@@ -162,6 +165,9 @@ export class HomepageComponent implements OnInit {
       
     }
 
+    let that =this;
+    setTimeout(function(){that.animationIsDone=true},1000)
+
     
   }
 
@@ -176,7 +182,9 @@ export class HomepageComponent implements OnInit {
   scrollPage()
   {
     const offset=this.pages.last.nativeElement.clientHeight*this.currentPage-25;
+    console.log(offset)
     document.body.scrollTop=offset
+
   }
 
   getScrollMode(){
@@ -305,11 +313,24 @@ calculatePage(sc,height)
   root.style.setProperty('--hue-color',huerotate+'deg')
 
   if (this.currentPage>0){root.style.setProperty('--opacity-var','1')
+  
+ 
+  console.log(this.currentTitle,this.currentPage)
 } 
 else{
   root.style.setProperty('--opacity-var','0')
 }
-  
+this.render.addClass(this.pageTitle.nativeElement,'twist')
+var that= this;
+setTimeout(function(){that.render.removeClass(that.pageTitle.nativeElement,'twist')},450)
+  switch(this.currentPage){
+    case 0 : this.currentTitle="Bienvenidos"; break
+    case 1: this.currentTitle="Nuestro foco es la administracion."; break
+    case 2: this.currentTitle="Es importante mantener informado."; break
+    case 3: this.currentTitle="Cuidamos el detalle."; break
+    case 5: this.currentTitle="Estamos a un click de distancia."; break
+    default: this.currentTitle="Bienvenidos"; break
+  } 
 
   
   

@@ -1,5 +1,5 @@
 <app-mainmenu></app-mainmenu>
- <div  class="page-number">
+<div class="page-number">
     <span #pageNumber [innerHtml]='currentPage'>1</span>
   </div>
 <div class="scroll-type" (click)="changeScroll()" [matTooltip]="getScrollMode()">
@@ -38,7 +38,7 @@
         transform="translate(-95 -25.89)" />
       <path class="cls-2" d="M232,217.65v3.48c-4.82-.22-8.33-.91-8.33-1.74S227.18,217.87,232,217.65Z"
         transform="translate(-95 -25.89)" />
-      <path class="cls-2" d="M232,229.81v3.48c-4.82-.22-8.33-.91-8.33-1.74S227.18,230,232,229.81Z"
+ 0     <path class="cls-2" d="M232,229.81v3.48c-4.82-.22-8.33-.91-8.33-1.74S227.18,230,232,229.81Z"
         transform="translate(-95 -25.89)" />
       <path class="cls-2" d="M232,242v3.48c-4.82-.22-8.33-.91-8.33-1.74S227.18,242.19,232,242Z"
         transform="translate(-95 -25.89)" />
@@ -70,7 +70,7 @@
 </div>
 <div class="container principal">
   <section class="container-section" style="padding: 0;" #pageSection >
-    <div class="row first-row" style="margin-top: 120px;">
+    <div class="row first-row" style="margin-top: 109px;">
       <div class="col-12">
           <div class="fade-in">
         <img id="f1" src="../../../assets/images/background1-first-image.png" alt="">
@@ -120,14 +120,15 @@
 </section>
 
   <section class="container-section" #pageSection>
+    <div class="section-title" #pageTitle>
+            <span [innerHTML]="currentTitle">Bienvenidos</span>
+    </div>
     <div class="second-row">
-      <div class="col-12 col-md-4">
-        <div class="mycard first-card" (click)="selectFirst()"
-          [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird}">
+      <div class="col-12 col-md-6">
+        <div class="mycard admin-card">
 
           <span>
-            <p class="span-title">Interfaz de padres:</p> Interfaz pensada para el control de las notas, ausencias y
-            boletines de sus hijos durante todo el ciclo escolar
+            <p class="span-title">Interfaz administrativa:</p> Pensada para el control y generacion de metricas referidas a los pagos para llevar a cabo un seguimiento de la contabilidad.
 
             <button matTooltip="Ver mas" class="view-more" style="left:0; right: 15px;">
               <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.62 296.14">
@@ -142,140 +143,35 @@
 
             </button>
           </span>
-          <img src="../../../assets/images/background1-second-image.png" alt="">
+          <img src="../../../assets/images/administratives.png" alt="">
 
         </div>
 
-        <div class="card-info" (click)="selectFirst()" [ngClass]="{'show-info': selectedFirst}">
+        
+      </div>
+
+      <div class="col-12 col-md-6">
+        <div class="card-info" style="opacity:1; width: 100%;">
           <span>
-            Padres
+               Administrativos
             <section class="section-info">
 
-              <span style="color: black;"><b class="titles">Asistencia:</b> Recibira diariamente la confirmacion de la
-                asistencia de su hijo.</span>
+              <span style="color: black;"><b class="titles">Control de pago: </b> Gestion de pago, envios automaticos de facturas por mail y control de estados de cuenta.</span>
             </section>
             <section class="section-info">
 
-              <span style="color: black;"><b class="titles">Notificacion:</b> Recibira notificaciones constantes de
-                fechas de evaluaciones y el resultado de las mismas, adicionalmente recibira avisos generales con las
-                novedades de la escuela. </span>
+              <span style="color: black;"><b class="titles">Notificaciones:</b>Se pondran configurar notificaciones automaticas para enviar a padres que se atrasen en el pago de cuota. </span>
             </section>
             <section class="section-info">
 
-              <span><b class="titles">Mensajeria:</b> Podra interactuar con los profesores y consultar el cuaderno de
-                comunicado vritual</span>
+              <span><b class="titles">Metricas:</b> Ver el balance por mes del pago de cuotas, cantidad de padres que se atrasaron con el pago de la cuota, control de gastos etc.</span>
             </section>
 
           </span>
         </div>
-
       </div>
-      <div class="col-12 col-md-4">
-
-        <div class="card-flip-container" [ngClass]="{'to-top': selectedThird,'to-bottom':selectedFirst}">
-          <div class="mycard second-card card-flip front" (click)="selectSecond()"
-            [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird, 'showback':selectedSecond}">
-            <span class="teacher-span">
-              <p class="span-title">Interfaz de Profesores</p>Las vistas del profesor estan pensadas para la
-              administracion de las clases y control de las tareas asignadas
-              <button matTooltip="Ver mas" class="view-more">
-                <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.62 296.14">
-
-                  <path id="semicircle" [ngClass]="{'cancel': selectedSecond}"
-                    d="M298.61,153.7a8.26,8.26,0,0,0-7.89-8.63h-.21a8.25,8.25,0,0,0-5.79,14.23A136.52,136.52,0,0,1,148.07,285.14C72.49,285.14,11,223.65,11,148.07S72.49,11,148.07,11A138,138,0,0,1,268.65,82.88a8.22,8.22,0,0,0,7.68,11.3v0a8.29,8.29,0,0,0,7.8-5.55A8.28,8.28,0,0,0,278.51,78,148,148,0,0,0,148.07,0C66.39,0,0,66.42,0,148.07S66.39,296.14,148.07,296.14A148,148,0,0,0,295.7,159.63,8.2,8.2,0,0,0,298.61,153.7Z"
-                    transform="translate(0 0)" />
-                  <path id="cross" [ngClass]="{'cancel': selectedSecond}"
-                    d="M230.83,142.57H154.89V66.63a5.5,5.5,0,0,0-11,0v75.94H68a5.5,5.5,0,1,0,0,11h75.94v75.94a5.5,5.5,0,0,0,11,0V153.57h75.94a5.5,5.5,0,0,0,0-11Z"
-                    transform="translate(0 0)" />
-                </svg>
-
-              </button>
-            </span>
-            <img class="teacher-img" src="../../../assets/images/background1-first-image.png" alt="">
-          </div>
-
-          <div class="mycard card-flip back" (click)="selectSecond()"
-            [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird, 'showback':selectedSecond}">
-            <div class="card-second-info">
-              <span>
-                Profesores
-                <section class="section-info">
-
-                  <span style="color: black;"><b class="titles">Metricas</b>Podra visualizar graficos estadisticos de
-                    las evaluaciones tanto general como particular.</span>
-                </section>
-                <section class="section-info">
-
-                  <span><b class="titles">Grupos de trabajo practico:</b> Podra interactuar con sus compañeros y
-                    profesor sobre trabajos practicos ya sea agregando comentarios o subiendo los avances del
-                    mismo.</span>
-                </section>
-                <section class="section-info">
-
-                  <span><b class="titles">Mensajeria:</b> Podra enviar mensajes con sus compañeros y profesores a traves
-                    del chat.</span>
-                </section>
-
-              </span>
-
-
-
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="col-12 col-md-4" id="third-col">
-        <div class="mycard third-card" (click)="selectThird()"
-          [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird}">
-          <span>
-            <p class="span-title">Interfaz de Alumnos</p>Las vistas del profesor estan pensadas para la administracion
-            de las clases y control de las tareas asignadas
-
-            <button matTooltip="Ver mas" class="view-more">
-              <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.62 296.14">
-
-                <path id="semicircle" [ngClass]="{'cancel': selectedThird}"
-                  d="M298.61,153.7a8.26,8.26,0,0,0-7.89-8.63h-.21a8.25,8.25,0,0,0-5.79,14.23A136.52,136.52,0,0,1,148.07,285.14C72.49,285.14,11,223.65,11,148.07S72.49,11,148.07,11A138,138,0,0,1,268.65,82.88a8.22,8.22,0,0,0,7.68,11.3v0a8.29,8.29,0,0,0,7.8-5.55A8.28,8.28,0,0,0,278.51,78,148,148,0,0,0,148.07,0C66.39,0,0,66.42,0,148.07S66.39,296.14,148.07,296.14A148,148,0,0,0,295.7,159.63,8.2,8.2,0,0,0,298.61,153.7Z"
-                  transform="translate(0 0)" />
-                <path id="cross" [ngClass]="{'cancel': selectedThird}"
-                  d="M230.83,142.57H154.89V66.63a5.5,5.5,0,0,0-11,0v75.94H68a5.5,5.5,0,1,0,0,11h75.94v75.94a5.5,5.5,0,0,0,11,0V153.57h75.94a5.5,5.5,0,0,0,0-11Z"
-                  transform="translate(0 0)" />
-              </svg>
-
-            </button>
-          </span>
-          <img src="../../../assets/images/background1-third-image.png" alt="">
-
-        </div>
-
-        <div class="card-third-info" (click)="selectThird()" [ngClass]="{'show-third-info': selectedThird}">
-          <span>
-            Estudiantes
-            <section class="section-info">
-
-              <span style="color: black;"><b class="titles">Material de estudio online:</b> Podra descargar material de
-                estudio que estara disponible en la biblioteca virtual.</span>
-            </section>
-            <section class="section-info">
-
-              <span><b class="titles">Grupos de trabajo practico:</b> Podra interactuar con sus compañeros y profesor
-                sobre trabajos practicos ya sea agregando comentarios o subiendo los avances del mismo.</span>
-            </section>
-            <section class="section-info">
-
-              <span><b class="titles">Mensajeria:</b> Podra enviar mensajes con sus compañeros y profesores a traves del
-                chat.</span>
-            </section>
-
-          </span>
-
-
-
-        </div>
-
-
-      </div>
+     
+   
     </div>
   </section>
 
@@ -286,8 +182,8 @@
           [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird}">
 
           <span>
-            <p class="span-title">Interfaz de padres:</p> Interfaz pensada para el control de las notas, ausencias y
-            boletines de sus hijos durante todo el ciclo escolar
+            <p class="span-title">Seccion padres:</p> Podra llevar un control de las notas, ausencias y
+            boletines de sus hijos durante todo el ciclo escolar, debidamente notificado.
 
             <button matTooltip="Ver mas" class="view-more" style="left:0; right: 15px;">
               <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.62 296.14">
@@ -336,8 +232,7 @@
           <div class="mycard second-card card-flip front" (click)="selectSecond()"
             [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird, 'showback':selectedSecond}">
             <span class="teacher-span">
-              <p class="span-title">Interfaz de Profesores</p>Las vistas del profesor estan pensadas para la
-              administracion de las clases y control de las tareas asignadas
+              <p class="span-title">Seccion Profesores</p>Pensado para el control y administracion de las tareas, carga de notas y comunicados
               <button matTooltip="Ver mas" class="view-more">
                 <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.62 296.14">
 
@@ -389,8 +284,7 @@
         <div class="mycard third-card" (click)="selectThird()"
           [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird}">
           <span>
-            <p class="span-title">Interfaz de Alumnos</p>Las vistas del profesor estan pensadas para la administracion
-            de las clases y control de las tareas asignadas
+            <p class="span-title">Seccion Alumnos</p>Se trata de una version simplificada para la consulta directa de los alumnos a su informacion academicas
 
             <button matTooltip="Ver mas" class="view-more">
               <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.62 296.14">

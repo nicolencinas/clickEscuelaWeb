@@ -209,15 +209,38 @@
   }
   
 
-  .first-card img
+  .first-card img, .admin-card img 
   {
     position: absolute;
-    width: 100%;
+    width: 80%;
     bottom: 0;
     left: -30%;
   }
 
-  .first-card span
+  .admin-card{
+    overflow: hidden;
+  }
+  .admin-card img{
+    transition: 0.5s ease-in-out;
+
+  }
+  .admin-card:hover img{
+    transform: translate(-10%);
+  }
+
+  .admin-card img{
+    left: -2%;
+    width: 70%;
+  }
+  .mycard.admin-card{
+    width: 100%;
+  }
+  .admin-card{
+     display: flex;
+     flex-direction: column;
+  }
+
+  .first-card span, .admin-card span
   {
     text-align: start;
     padding: 1em;
@@ -1194,11 +1217,19 @@ transform: rotate(0);
 
 }
 .container-section:nth-child(2){
-  background: url(../../../assets/images/background-section-2.png);
+  background: url(../../../assets/images/office.png);
   background-size: cover;
 }
 .container-section:nth-child(3){
+  background: url(../../../assets/images/background-section-2.png);
+  background-size: cover;
+}
+.container-section:nth-child(4){
   background: url(../../../assets/images/background-section-1.png);
+  background-size: cover;
+}
+.container-section:nth-child(5){
+  background: url(../../../assets/images/background.png);
   background-size: cover;
 }
 
@@ -1359,5 +1390,23 @@ h5{
   color: $blue-A;
   border-radius: 1em;
   padding-left: 2em;
+}
+
+.section-title{
+  position: absolute;
+  top: 120px;
+  left: 0;
+  background-color: $custom-blue;
+  z-index: 9999;
+  padding: 1em;
+  width: 300px;
+  border-radius: 0 1em 1em 0 ;
+  transition: 0.5s ease-in-out;
+  transform-style: preserve-3d;
+  transition: 0.5s ease-in-out;
+}
+
+.twist{
+  transform: rotateX(360deg);
 }
 
