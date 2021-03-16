@@ -15,6 +15,8 @@ export class HomepageComponent implements OnInit {
   @ViewChild('pathLines') pathLines: ElementRef;
   @ViewChild('textLogo') textLogo: ElementRef;
   @ViewChild('pageNumber') pageNumber: ElementRef;
+  @ViewChild('pageNumberContainer') pageNumberContainer: ElementRef;
+
   @ViewChild('pageTitle') pageTitle: ElementRef;
 
 
@@ -146,6 +148,9 @@ export class HomepageComponent implements OnInit {
 
       
       this.scrollPage()
+      this.render.addClass(this.pageNumberContainer.nativeElement,'blob-top')
+
+      setTimeout(()=>{this.render.removeClass(this.pageNumberContainer.nativeElement,'blob-top')},1000)
       
     }
 
@@ -162,6 +167,10 @@ export class HomepageComponent implements OnInit {
 
       
       this.scrollPage();
+      this.render.addClass(this.pageNumberContainer.nativeElement,'blob-bottom')
+
+      setTimeout(()=>{this.render.removeClass(this.pageNumberContainer.nativeElement,'blob-bottom')},1000)
+
       
     }
 
@@ -322,11 +331,11 @@ else{
 }
 this.render.addClass(this.pageTitle.nativeElement,'twist')
 var that= this;
-setTimeout(function(){that.render.removeClass(that.pageTitle.nativeElement,'twist')},450)
+setTimeout(function(){that.render.removeClass(that.pageTitle.nativeElement,'twist')},500)
   switch(this.currentPage){
     case 0 : this.currentTitle="Bienvenidos"; break
     case 1: this.currentTitle="Nuestro foco es la administracion."; break
-    case 2: this.currentTitle="Es importante mantener informado."; break
+    case 2: this.currentTitle="Queremos que ocupes un rol"; break
     case 3: this.currentTitle="Cuidamos el detalle."; break
     case 5: this.currentTitle="Estamos a un click de distancia."; break
     default: this.currentTitle="Bienvenidos"; break
