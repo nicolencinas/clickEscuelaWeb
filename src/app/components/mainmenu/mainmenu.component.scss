@@ -113,7 +113,7 @@
     }
 
     .menu-option:hover{
-      background-color: rgba(0, 0, 0, 0.834);
+      background-color: $blue-E
     }
 
     .menu-option-container{
@@ -186,4 +186,9 @@
       align-items: center;
       height:100px;
       width: 100%;
+    }
+
+    .menu-option.selected{
+      background-color: rgba(0, 0, 0, 0.834);
+
     }

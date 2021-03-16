@@ -1,4 +1,4 @@
-<app-mainmenu (navigation)="navigateTo($event)"></app-mainmenu>
+<app-mainmenu (navigation)="navigateTo($event)" [selectedIndex]="currentPage"></app-mainmenu>
 <div class="page-number" #pageNumberContainer>
     <span #pageNumber [innerHtml]='currentPage'>1</span>
   </div>
@@ -81,7 +81,7 @@
 
     
   </div>
-  <div class="row" style="margin-top: 0.6em; height: 60%;" >
+  <div class="row" style="margin-top: 0.6em; height: 60%; height: 60%;width: 80%;border-radius: 2em;overflow: hidden;" >
     <div class="col-12 col-md-4">
       <div class="row title-card" style="display:flex; text-align: center;justify-content: center; ;" >
 
@@ -346,7 +346,7 @@
             seleccionada</span>
         </div>
       </div>
-      <div class="col-12 col-md-8" style="display:flex;justify-content: center; align-items: center;">
+      <div class="col-12 col-md-8" style="display:flex;justify-content: center; align-items: center; background-color: whitesmoke">
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1433.97 545.58">
           <defs>
             <style>
@@ -631,25 +631,34 @@
     </div>
   </section>
 
+  <section class="container-section" style="display: flex; flex-direction: column;" #pageSection>
+    <div class="row gallery-container" #card2>
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+    </div>
 
-  <section class="container-section" #pageSection>
+    <div class="row carrousel">
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+      <img src="../../../assets/images/screenshots/library.png" alt="">
+    </div>
+    
+
+  </section>
+
+  <!-- <section class="container-section" #pageSection>
     <div class="row fourth-row" #card2>
       <div class="col-12 col-md-8" style="display:flex;justify-content: center; align-items: center;">
 
-
-        <div class="svg-up" #svgUp>
-          <img src="../../../assets/images/user.svg" alt="">
-          <img src="../../../assets/images/library.svg" alt="">
-          <img src="../../../assets/images/plus.svg " alt="">
-        </div>
-
-        <div class="svg-down" #svgDown>
-          <img src="../../../assets/images/pay.svg" alt="">
-          <img src="../../../assets/images/grades.svg" alt="">
-          <img src="../../../assets/images/hand.svg" alt="">
-          <img src="../../../assets/images/clip.svg" alt="">
-
-        </div>
 
 
 
@@ -658,18 +667,16 @@
       <div class="col-12 col-md-4">
         <div class="row title-card" style="display:flex; text-align: center;justify-content: center;">
 
-          <span style="padding:2em;">Interfaces amigables</span>
+          <span style="padding:2em;">Galeria de imagenes</span>
         </div>
         <div class="row title-body" style="display:flex; text-align: center;justify-content: center;">
 
-          <span style="padding:2em; color: black;">En click escuela cuidamos el aspecto de nuestras interfaces pensnado
-            en una estructura limpia y sencilla con una iconografia sutil y que contraste con la peleta de colores
-            seleccionada</span>
+          <span style="padding:2em; color: black;">Estas son algunas de nuestras vistas principales del sistema donde</span>
         </div>
       </div>
 
     </div>
-  </section>
+  </section> -->
 
 
 

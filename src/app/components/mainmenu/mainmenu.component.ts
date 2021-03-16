@@ -26,6 +26,7 @@ import { HomepageComponent } from '../homepage/homepage.component';
 export class MainmenuComponent implements OnInit {
 
   hamburgerMenu:boolean;
+  @Input() selectedIndex;
 
   @Output() navigation = new EventEmitter<number>();
 

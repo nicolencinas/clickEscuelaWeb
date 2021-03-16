@@ -342,6 +342,7 @@ setTimeout(function(){that.render.removeClass(that.pageTitle.nativeElement,'twis
     case 1: this.currentTitle="Nuestro foco es la administracion."; break
     case 2: this.currentTitle="Queremos que ocupes un rol"; break
     case 3: this.currentTitle="Cuidamos el detalle."; break
+    case 4: this.currentTitle="Asi nos presentamos"; break
     case 5: this.currentTitle="Estamos a un click de distancia."; break
     default: this.currentTitle="Bienvenidos"; break
   } 

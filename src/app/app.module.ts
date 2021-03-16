@@ -30,6 +30,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { matTooltipAnimations, MatTooltipModule } from '@angular/material/tooltip';
 import { MatExpansionModule } from '@angular/material/expansion';
+import { MDBBootstrapModule } from 'angular-bootstrap-md';
+
 
 
 
@@ -69,7 +71,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatDatepickerModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatNativeDateModule, MatMenuModule, MatCheckboxModule, MatTooltipModule, MatProgressSpinnerModule, MatExpansionModule, MatRippleModule
+    MatNativeDateModule, MatMenuModule, MatCheckboxModule, MatTooltipModule, MatProgressSpinnerModule, MatExpansionModule, MatRippleModule,MDBBootstrapModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

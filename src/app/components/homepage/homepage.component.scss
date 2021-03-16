@@ -1232,10 +1232,7 @@ transform: rotate(0);
   background: url(../../../assets/images/background-section-1.png);
   background-size: cover;
 }
-.container-section:nth-child(5){
-  background: url(../../../assets/images/background.png);
-  background-size: cover;
-}
+
 
 .title-body{
   background-color: $green;
@@ -1314,7 +1311,20 @@ transform: rotate(0);
 
 ::ng-deep body::-webkit-scrollbar{
   display: var(--scroll-view) !important;
+  background-color: transparent;
 }
+
+::ng-deep body::-webkit-scrollbar-thumb{
+ background-color:$custom-blue;
+ filter: hue-rotate(var(--hue-color));
+ border-radius: 1em;
+}
+
+::ng-deep body::-webkit-scrollbar-track{
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: inset 7px 10px 12px #f0f0f0;
+ }
 
 
 //Estilos para boton ver mas
@@ -1461,3 +1471,56 @@ h5{
 
 }
 
+.fourth-row{
+  margin-top: 5em;
+}
+
+//Estilos de la galeria
+.gallery-container
+{
+  width: 60%;
+  height: 60%;
+  background-color: aqua;
+  display: flex;
+  flex-direction: row;
+  overflow-x: scroll;
+  transition: 0.5s ease-in-out;
+  transform: scale3d(1,1,1);
+  margin-bottom: 2em;
+  margin-top: 4em;
+  
+  
+}
+
+.carrousel{
+  width: 90%;
+  height: 110px;
+  overflow: scroll;
+  display: flex;
+  flex-direction: column;
+  
+  
+}
+.carrousel img{
+    width: 150px;
+    margin-left: 1em;
+  }
+  .carrousel::-webkit-scrollbar{
+    display: block;
+  }
+
+  .carrousel::-webkit-scrollbar-thumb{
+    background-color: #9acd8d;
+    border-radius: 1em;
+  }
+
+.gallery-container img{
+  width: 100%;
+  height: auto;
+  
+}
+
+.container-section:nth-child(5)
+{
+  background-color:#0a4f56;
+}
