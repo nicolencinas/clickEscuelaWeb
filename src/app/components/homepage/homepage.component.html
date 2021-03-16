@@ -1,4 +1,4 @@
-<app-mainmenu></app-mainmenu>
+<app-mainmenu (navigation)="navigateTo($event)"></app-mainmenu>
 <div class="page-number" #pageNumberContainer>
     <span #pageNumber [innerHtml]='currentPage'>1</span>
   </div>

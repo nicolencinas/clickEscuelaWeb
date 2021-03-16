@@ -27,6 +27,13 @@ export class MainmenuComponent implements OnInit {
 
   hamburgerMenu:boolean;
 
+  @Output() navigation = new EventEmitter<number>();
+
+  navigateTo(value :number)
+  {
+    this.navigation.emit(value) 
+  }
+
   constructor() 
   {
     this.hamburgerMenu=false;

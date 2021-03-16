@@ -196,6 +196,11 @@ export class HomepageComponent implements OnInit {
 
   }
 
+  navigateTo($event){
+    this.currentPage=$event;
+    this.scrollPage()
+  }
+
   getScrollMode(){
     return this.modernScroll ? 'Scroll Section' : "Normal Scroll" 
   }
@@ -206,7 +211,7 @@ export class HomepageComponent implements OnInit {
     let sc = s.target.scrollTop;
     this.scrollTop=sc
    
-    if (sc>723)
+    if (sc>723*2)
     {
       this.render.addClass(this.card1.nativeElement,"fade-in-row")
       this.render.addClass(this.svgDown.nativeElement,"addDownAnimation")
@@ -225,7 +230,7 @@ export class HomepageComponent implements OnInit {
 
     }
 
-     if(sc>1446)
+     if(sc>723*3)
     {
       this.render.addClass(this.card2.nativeElement,"fade-in-row")
     }
