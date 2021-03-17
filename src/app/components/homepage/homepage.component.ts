@@ -230,7 +230,7 @@ export class HomepageComponent implements OnInit {
 
     }
 
-     if(sc>723*3)
+     if(sc>723*4)
     {
       this.render.addClass(this.card2.nativeElement,"fade-in-row")
     }
@@ -343,7 +343,8 @@ setTimeout(function(){that.render.removeClass(that.pageTitle.nativeElement,'twis
     case 2: this.currentTitle="Queremos que ocupes un rol"; break
     case 3: this.currentTitle="Cuidamos el detalle."; break
     case 4: this.currentTitle="Asi nos presentamos"; break
-    case 5: this.currentTitle="Estamos a un click de distancia."; break
+    case 5: this.currentTitle="Te invitamos a subscribirte"; break
+    case 6: this.currentTitle="Estamos a un click de distancia."; break
     default: this.currentTitle="Bienvenidos"; break
   } 
 
