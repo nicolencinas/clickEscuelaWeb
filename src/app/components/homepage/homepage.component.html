@@ -652,9 +652,13 @@
   <section class="container-section" id="gallery-section" style="display: flex; flex-direction: column;" #pageSection>
     <div class="row-mark">
       <div class="row gallery-container">
-      <button (click)="nextImage()"><i class="fas fa-chevron-left"></i></button>
+      <button style="right: calc(0% - 70px)" (click)="nextImage()"><i class="fas fa-chevron-left"></i></button>
       <img src="../../../assets/images/screenshots/library.png" [src]="selectedImage" alt="">
       <button (click)="prevImage()"><i class="fas fa-chevron-right"></i></button>
+
+      <!-- <div class="description-image">
+        hola
+      </div> -->
     </div>
 
     <div class="row carrousel">

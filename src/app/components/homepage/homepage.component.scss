@@ -1549,7 +1549,15 @@ h5{
   left: -70px;
 }
 .gallery-container button:last-child{
-  right: -70px;
+  right: calc(0% - 70px);
+}
+
+.description-image{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(0, 0, 0, 0.363);
 }
 
 
