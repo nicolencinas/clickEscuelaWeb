@@ -26,6 +26,7 @@ import { HomepageComponent } from '../homepage/homepage.component';
 export class MainmenuComponent implements OnInit {
 
   hamburgerMenu:boolean;
+  secondPage:boolean;
   @Input() selectedIndex;
 
   @Output() navigation = new EventEmitter<number>();
@@ -43,6 +44,11 @@ export class MainmenuComponent implements OnInit {
 
   changeButtonState(){
     this.hamburgerMenu=!this.hamburgerMenu
+    this.secondPage=false;
+  }
+
+  changeOptionPage(){
+    this.secondPage=!this.secondPage
   }
 
   
