@@ -649,25 +649,27 @@
     </div>
   </section>
 
-  <section class="container-section" style="display: flex; flex-direction: column;" #pageSection>
-    <div class="row gallery-container">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
+  <section class="container-section" id="gallery-section" style="display: flex; flex-direction: column;" #pageSection>
+    <div class="row-mark">
+      <div class="row gallery-container">
+      <button (click)="nextImage()"><i class="fas fa-chevron-left"></i></button>
+      <img src="../../../assets/images/screenshots/library.png" [src]="selectedImage" alt="">
+      <button (click)="prevImage()"><i class="fas fa-chevron-right"></i></button>
     </div>
 
     <div class="row carrousel">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
-      <img src="../../../assets/images/screenshots/library.png" alt="">
+      <div *ngFor="let image of imagesList; let index=index" class="img-container" (click)="selectImage(index)">
+          <img  src="{{image}}" alt="">
+      </div>
+
+      <div *ngFor="let image of imagesList; let index=index" class="img-container" (click)="selectImage(index)">
+        <img  src="{{image}}" alt="">
+    </div>
+    </div>
+    
+    
+      
+    
     </div>
 
 

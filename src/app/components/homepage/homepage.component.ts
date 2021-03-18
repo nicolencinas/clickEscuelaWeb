@@ -43,6 +43,9 @@ export class HomepageComponent implements OnInit {
   scrollMode:string;
 
   currentTitle:string;
+  currentImage:number;
+  imagesList: any;
+  selectedImage: any;
 
 
 
@@ -59,6 +62,15 @@ export class HomepageComponent implements OnInit {
 
     this.modernScroll ? root.style.setProperty('--scroll-view','none') : root.style.setProperty('--scroll-view','flex') 
     this.currentTitle="Bienvenidos"
+
+    this.imagesList=["../../../assets/images/screenshots/library.png",
+  "../../../assets/images/screenshots/message-closed.png",
+  "../../../assets/images/screenshots/message-open.png",
+  "../../../assets/images/screenshots/pays.png",
+  "../../../assets/images/screenshots/teacher.png"]
+
+  this.selectedImage=this.imagesList[0]
+  this.currentImage=0;
     
   }
 
@@ -188,6 +200,36 @@ export class HomepageComponent implements OnInit {
 
   }
 
+  nextImage()
+  {
+   
+    if (this.currentImage==this.imagesList.length-1)
+      {
+        this.currentImage=0
+      }
+      else{
+        this.currentImage++;
+      }
+
+
+
+    this.selectedImage=this.imagesList[this.currentImage]
+    console.log(this.currentImage)
+  }
+
+  prevImage(){
+    if (this.currentImage==0)
+    {
+      this.currentImage=this.imagesList.length-1
+    }
+    else{
+      this.currentImage--;
+    }
+    this.selectedImage=this.imagesList[this.currentImage]
+    console.log(this.currentImage)
+
+  }
+
   scrollPage()
   {
     const offset=this.pages.last.nativeElement.clientHeight*this.currentPage-25;
@@ -283,6 +325,11 @@ selectThird()
     this.selectedFirst=false
   }
 
+}
+
+selectImage(num:number){
+  this.currentImage=num;
+  this.selectedImage=this.imagesList[num]
 }
   //   VanillaTilt.init(this.card2.nativeElement, {
   //     max: 15,
