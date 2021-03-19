@@ -45,7 +45,10 @@ export class HomepageComponent implements OnInit {
   currentTitle:string;
   currentImage:number;
   imagesList: any;
+  imagesListNames:string[];
   selectedImage: any;
+
+  viewInfo:boolean;
 
 
 
@@ -69,8 +72,13 @@ export class HomepageComponent implements OnInit {
   "../../../assets/images/screenshots/pays.png",
   "../../../assets/images/screenshots/teacher.png"]
 
+  this.imagesListNames=["Biblioteca","Pagina Principal de mensajes","Interfaz de chats","Pagina de pagos","Vista de Creación de tareas"]
+
+
   this.selectedImage=this.imagesList[0]
   this.currentImage=0;
+
+  this.viewInfo=false;
     
   }
 
@@ -85,6 +93,10 @@ export class HomepageComponent implements OnInit {
 
     this.modernScroll ? root.style.setProperty('--scroll-view','none') : root.style.setProperty('--scroll-view','flex') 
     
+  }
+
+  changeViewInfo(){
+    this.viewInfo=!this.viewInfo
   }
 
 

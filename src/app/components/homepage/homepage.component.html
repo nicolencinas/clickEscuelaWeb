@@ -652,13 +652,15 @@
   <section class="container-section" id="gallery-section" style="display: flex; flex-direction: column;" #pageSection>
     <div class="row-mark">
       <div class="row gallery-container">
-      <button style="right: calc(0% - 70px)" (click)="nextImage()"><i class="fas fa-chevron-left"></i></button>
+      <button  (click)="nextImage()"><i class="fas fa-chevron-left"></i></button>
       <img src="../../../assets/images/screenshots/library.png" [src]="selectedImage" alt="">
-      <button (click)="prevImage()"><i class="fas fa-chevron-right"></i></button>
-
-      <!-- <div class="description-image">
-        hola
-      </div> -->
+      
+      <div class="more-info" [ngClass]="{'show-info': viewInfo}" (click)="changeViewInfo()" matTooltip="Ver informacion"><i class="fas fa-plus"></i></div>
+      <div class="description-image" [ngClass]="{'show-info': viewInfo}">
+        <span>{{imagesListNames[currentImage]}}</span>
+        <span style="display:flex; flex-direction: row;"><p>{{currentImage}}</p><p>/{{imagesList.length}}</p></span>
+      </div>
+      <button (click)="prevImage()" style="right: calc(0% - 70px) !important"><i class="fas fa-chevron-right"></i></button>
       
     </div>
 
