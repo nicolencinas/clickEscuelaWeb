@@ -1611,8 +1611,29 @@ h5{
 
 }
 
+.gallery-container.im-here:hover .more-info{
+  animation: iAmHere 2s ease-in-out 0s infinite;
+}
+
+@keyframes iAmHere{
+  0%,20%{
+    box-shadow: 0px 0px 12px 4px  $custom-blue-glass;
+  }20%,40%{
+    box-shadow: 0px 0px 12px 8px  $custom-blue-glass;
+  }
+  40%,60%{
+    box-shadow: 0px 0px 12px 2px  $custom-blue-glass;
+  }
+  60%,80%{
+    box-shadow: 0px 0px 12px 6px  $custom-blue-glass;
+  }
+  80%,100%{
+    box-shadow: 0px 0px 12px 4px  $custom-blue-glass;  
+  }
+}
+
 .more-info.show-info svg{
-  transform: rotate(45deg) scale(1.5);
+  transform: rotate(45deg) scale(1.6);
   fill: red;
 
 }
