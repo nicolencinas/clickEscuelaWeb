@@ -138,21 +138,10 @@
         <div class="mycard admin-card">
 
           <span>
-            <p class="span-title">Interfaz administrativa:</p> Pensada para el control y generacion de metricas
+            <p class="span-title">Interfaz administrativa:</p>Esta seccion es nuestro fuerte es la base en lo que fue
+            concebido Click Escuela. Pensada para el control y generacion de metricas
             referidas a los pagos para llevar a cabo un seguimiento de la contabilidad.
 
-            <button matTooltip="Ver mas" class="view-more" style="left:0; right: 15px;">
-              <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.62 296.14">
-
-                <path id="semicircle" [ngClass]="{'cancel': selectedFirst}"
-                  d="M298.61,153.7a8.26,8.26,0,0,0-7.89-8.63h-.21a8.25,8.25,0,0,0-5.79,14.23A136.52,136.52,0,0,1,148.07,285.14C72.49,285.14,11,223.65,11,148.07S72.49,11,148.07,11A138,138,0,0,1,268.65,82.88a8.22,8.22,0,0,0,7.68,11.3v0a8.29,8.29,0,0,0,7.8-5.55A8.28,8.28,0,0,0,278.51,78,148,148,0,0,0,148.07,0C66.39,0,0,66.42,0,148.07S66.39,296.14,148.07,296.14A148,148,0,0,0,295.7,159.63,8.2,8.2,0,0,0,298.61,153.7Z"
-                  transform="translate(0 0)" />
-                <path id="cross" [ngClass]="{'cancel': selectedFirst}"
-                  d="M230.83,142.57H154.89V66.63a5.5,5.5,0,0,0-11,0v75.94H68a5.5,5.5,0,1,0,0,11h75.94v75.94a5.5,5.5,0,0,0,11,0V153.57h75.94a5.5,5.5,0,0,0,0-11Z"
-                  transform="translate(0 0)" />
-              </svg>
-
-            </button>
           </span>
           <img src="../../../assets/images/administratives.png" alt="">
 
@@ -195,7 +184,7 @@
         <div class="mycard first-card" (click)="selectFirst()"
           [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird}">
 
-          <span>
+          <span class="resume-info">
             <p class="span-title">Seccion padres:</p> Podra llevar un control de las notas, ausencias y
             boletines de sus hijos durante todo el ciclo escolar, debidamente notificado.
 
@@ -245,7 +234,7 @@
         <div class="card-flip-container" [ngClass]="{'to-top': selectedThird,'to-bottom':selectedFirst}">
           <div class="mycard second-card card-flip front" (click)="selectSecond()"
             [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird, 'showback':selectedSecond}">
-            <span class="teacher-span">
+            <span class="teacher-span resume-info">
               <p class="span-title">Seccion Profesores</p>Pensado para el control y administracion de las tareas, carga
               de notas y comunicados
               <button matTooltip="Ver mas" class="view-more">
@@ -298,7 +287,7 @@
       <div class="col-12 col-md-4" id="third-col">
         <div class="mycard third-card" (click)="selectThird()"
           [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird}">
-          <span>
+          <span class="resume-info">
             <p class="span-title">Seccion Alumnos</p>Se trata de una version simplificada para la consulta directa de
             los alumnos a su informacion academicas
 
@@ -354,13 +343,14 @@
       <div class="col-12 col-md-4">
         <div class="row title-card" style="display:flex; text-align: center;justify-content: center;">
 
-          <span style="padding:2em;">Interfaces amigables</span>
+          <span style="padding:2em;">Interfaces gráficas limpias</span>
         </div>
         <div class="row title-body" style="display:flex; text-align: center;justify-content: center;">
 
-          <span style="padding:2em; color: black;">En click escuela cuidamos el aspecto de nuestras interfaces pensnado
-            en una estructura limpia y sencilla con una iconografia sutil y que contraste con la peleta de colores
-            seleccionada</span>
+          <span style="padding:2em; color: black; text-align: start;">En click escuela cuidamos el aspecto de nuestras interfaces
+            enfocándonos
+            en una estructura limpia y sencilla, con una iconografía sutil y que contraste con la paleta de colores
+            seleccionada.<br> <br> Tambien cuenta con animaciones que hacen la experiencia mas fluida </span>
         </div>
       </div>
       <div class="col-12 col-md-8"
@@ -652,31 +642,36 @@
   <section class="container-section" id="gallery-section" style="display: flex; flex-direction: column;" #pageSection>
     <div class="row-mark">
       <div class="row gallery-container" [ngClass]="{'im-here': !viewInfo}">
-      <button  (click)="nextImage()"><i class="fas fa-chevron-left"></i></button>
-      <img src="../../../assets/images/screenshots/library.png" [src]="selectedImage" alt="">
-      
-      <div class="more-info" [ngClass]="{'show-info': viewInfo}" (click)="changeViewInfo()" matTooltip="Ver/ocultar informacion"><i class="fas fa-plus"></i></div>
-      <div class="description-image" [ngClass]="{'show-info': viewInfo}">
-        <span>{{imagesListNames[currentImage]}}</span>
-        <span style="display:flex; flex-direction: row;"><p>{{currentImage}}</p><p>/{{imagesList.length}}</p></span>
-      </div>
-      <button (click)="prevImage()" style="right: calc(0% - 70px) !important"><i class="fas fa-chevron-right"></i></button>
-      
-    </div>
+        <button (click)="nextImage()"><i class="fas fa-chevron-left"></i></button>
+        <img src="../../../assets/images/screenshots/library.png" [src]="selectedImage" alt="">
 
-    <div class="row carrousel">
-      <div *ngFor="let image of imagesList; let index=index" class="img-container" (click)="selectImage(index)">
-          <img  src="{{image}}" alt="">
+        <div class="more-info" [ngClass]="{'show-info': viewInfo}" (click)="changeViewInfo()"
+          matTooltip="Ver/ocultar informacion"><i class="fas fa-plus"></i></div>
+        <div class="description-image" [ngClass]="{'show-info': viewInfo}">
+          <span>{{imagesListNames[currentImage]}}</span>
+          <span style="display:flex; flex-direction: row;">
+            <p>{{currentImage}}</p>
+            <p>/{{imagesList.length}}</p>
+          </span>
+        </div>
+        <button (click)="prevImage()" style="right: calc(0% - 70px) !important"><i
+            class="fas fa-chevron-right"></i></button>
+
       </div>
 
-      <div *ngFor="let image of imagesList; let index=index" class="img-container" (click)="selectImage(index)">
-        <img  src="{{image}}" alt="">
-    </div>
-    </div>
-    
-    
-      
-    
+      <div class="row carrousel">
+        <div *ngFor="let image of imagesList; let index=index" class="img-container" (click)="selectImage(index)">
+          <img src="{{image}}" alt="">
+        </div>
+
+        <div *ngFor="let image of imagesList; let index=index" class="img-container" (click)="selectImage(index)">
+          <img src="{{image}}" alt="">
+        </div>
+      </div>
+
+
+
+
     </div>
 
 
@@ -698,7 +693,8 @@
         </div>
         <div class="row title-body" style="display:flex; text-align: center;justify-content: center;">
 
-          <span style="padding:2em; color: black;">Estas son algunas de nuestras vistas principales del sistema donde</span>
+          <span style="padding:2em; color: black;">Estas son algunas de nuestras vistas principales del sistema
+            donde</span>
         </div>
       </div>
 

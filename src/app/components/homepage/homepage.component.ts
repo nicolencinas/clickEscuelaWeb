@@ -130,6 +130,9 @@ export class HomepageComponent implements OnInit {
         this.currentPage--;
       }
 
+      this.render.addClass(this.pageNumberContainer.nativeElement,'blob-top')
+
+      setTimeout(()=>{this.render.removeClass(this.pageNumberContainer.nativeElement,'blob-top')},1000)
       this.scrollPage()
 
      }
@@ -143,6 +146,9 @@ export class HomepageComponent implements OnInit {
         this.currentPage++;
       }
 
+      this.render.addClass(this.pageNumberContainer.nativeElement,'blob-bottom')
+
+      setTimeout(()=>{this.render.removeClass(this.pageNumberContainer.nativeElement,'blob-bottom')},1000)
       this.scrollPage()
 
      }
