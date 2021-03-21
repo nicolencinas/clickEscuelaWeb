@@ -126,7 +126,7 @@
     }
 
     .show-menu{
-      transform: translateX(10%) !important;
+      transform: translateX(20%) !important;
     }
 
     .menu-option{
@@ -157,8 +157,9 @@
     }
     .menu-option{
       flex-direction: row !important;
-      height: 20px;
+      height: unset !important;
       max-width: 72px;
+      justify-content: start !important;
     }
 
     svg{

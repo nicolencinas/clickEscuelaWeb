@@ -24,7 +24,7 @@ export class HomepageComponent implements OnInit {
 
   @ViewChild('document') document: ElementRef;
   @ViewChild('card2') card2: ElementRef;
-  @ViewChild('tilt1') tilt1: ElementRef;
+  @ViewChild('responsive') responsive: ElementRef;
 
   @ViewChildren ('pageSection') pages : QueryList<ElementRef>;
 
@@ -50,6 +50,11 @@ export class HomepageComponent implements OnInit {
 
   viewInfo:boolean;
 
+  selectedSub:number;
+  multiplatform: boolean;
+  titleDesing:string;
+  bodyDesing:string;
+  imgDesign:string;
 
 
 
@@ -79,12 +84,23 @@ export class HomepageComponent implements OnInit {
   this.currentImage=0;
 
   this.viewInfo=false;
+  this.selectedSub=-1;
+  this.multiplatform=false;
+
+  this.titleDesing="Interfaces Gráficas Limpias"
+  this.bodyDesing="En click escuela cuidamos el aspecto de nuestras interfaces enfocándonos en una estructura limpia y sencilla, con una iconografía sutil y que contraste con la paleta de colores seleccionada. Tambien cuenta con animaciones que hacen la experiencia mas fluida"
     
+  this.imgDesign="../../../assets/images/responsive.svg"
   }
 
   changePage(page){
     this.currentPage=page;
     this.scrollPage()
+  }
+
+  changeSelectedSub(num:number){
+    num!=this.selectedSub ? this.selectedSub=num: this.selectedSub=-1
+    console.log(this.selectedSub)
   }
 
   changeScroll(){
@@ -97,6 +113,10 @@ export class HomepageComponent implements OnInit {
 
   changeViewInfo(){
     this.viewInfo=!this.viewInfo
+  }
+
+  getimageDesign(){
+    return this.imgDesign
   }
 
 
@@ -271,7 +291,7 @@ export class HomepageComponent implements OnInit {
     let sc = s.target.scrollTop;
     this.scrollTop=sc
    
-    if (sc>723*2)
+    if (sc>723*2 )
     {
       this.render.addClass(this.card1.nativeElement,"fade-in-row")
       this.render.addClass(this.svgDown.nativeElement,"addDownAnimation")
@@ -305,12 +325,40 @@ export class HomepageComponent implements OnInit {
  
 
 //   ngAfterViewInit() {
-//     VanillaTilt.init(this.tilt1.nativeElement, {
-//       max: 15,
+//     VanillaTilt.init(this.responsive.nativeElement, {
+//       max: 20,
 //       speed: 400,
-//       perspective:2000
+//       perspective:2000,
+//     glare: true,
+//     "max-glare":0.5
 //     });
 // }
+
+showMultiplatform(){
+  this.multiplatform=!this.multiplatform
+  if (!this.multiplatform)
+  {
+  this.imgDesign="../../../assets/images/responsive.svg"
+  this.titleDesing="Interfaces Gráficas Limpias"
+  this.bodyDesing="En click escuela cuidamos el aspecto de nuestras interfaces enfocándonos en una estructura limpia y sencilla, con una iconografía sutil y que contraste con la paleta de colores seleccionada. Tambien cuenta con animaciones que hacen la experiencia mas fluida"
+  }
+  else{
+    this.imgDesign="../../assets/images/logo-reduced.svg"
+    this.titleDesing="Apto multiplataformas"
+  this.bodyDesing="La aplicacion es completamente responsive, es decir, que esta diseñada y optimizada para poder ser utilizada en todos los dispositivos. Esto pensando en la facilidad de visualización en dispositivos moviles"
+  }
+
+  console.log(this.titleDesing)
+  
+}
+
+getTitleDesign(){
+return this.titleDesing
+}
+
+getBodyDesign(){
+return this.bodyDesing
+}
 
 selectFirst()
 {

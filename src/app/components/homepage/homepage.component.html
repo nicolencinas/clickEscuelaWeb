@@ -289,7 +289,7 @@
           [ngClass]="{'stack-card': selectedFirst, 'stack-card-left': selectedThird}">
           <span class="resume-info">
             <p class="span-title">Seccion Alumnos</p>Se trata de una version simplificada para la consulta directa de
-            los alumnos a su informacion academicas
+            los alumnos a su informacion academica.
 
             <button matTooltip="Ver mas" class="view-more">
               <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.62 296.14">
@@ -339,22 +339,29 @@
   </section>
 
   <section class="container-section" #pageSection>
+    
     <div class="row third-row" #card1>
+      
       <div class="col-12 col-md-4">
         <div class="row title-card" style="display:flex; text-align: center;justify-content: center;">
 
-          <span style="padding:2em;">Interfaces gráficas limpias</span>
+          <span style="padding:2em;" [innerHtml]="getTitleDesign()">Interfaces gráficas limpias</span>
         </div>
         <div class="row title-body" style="display:flex; text-align: center;justify-content: center;">
 
-          <span style="padding:2em; color: black; text-align: start;">En click escuela cuidamos el aspecto de nuestras interfaces
+          <span style="padding:2em; color: black; text-align: start;" [innerHtml]="getBodyDesign()">En click escuela cuidamos el aspecto de nuestras interfaces
             enfocándonos
             en una estructura limpia y sencilla, con una iconografía sutil y que contraste con la paleta de colores
             seleccionada.<br> <br> Tambien cuenta con animaciones que hacen la experiencia mas fluida </span>
         </div>
       </div>
-      <div class="col-12 col-md-8"
-        style="display:flex;justify-content: center; align-items: center; background-color: whitesmoke">
+      <div class="col-12 col-md-8" style="display:flex;justify-content: center; align-items: center; background-color: whitesmoke">
+        <div class="responsive-button" matTooltip="Ver mas" #responsive (click)='showMultiplatform()'>
+          <img [src]="getimageDesign()" alt="">
+        </div>
+        <div class="platforms" [ngClass]="{'multiplatform': multiplatform}">
+          <img src="../../../assets/images/platform.png" alt="">
+      </div>
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1433.97 545.58">
           <defs>
             <style>
@@ -637,6 +644,7 @@
 
       </div>
     </div>
+    
   </section>
 
   <section class="container-section" id="gallery-section" style="display: flex; flex-direction: column;" #pageSection>
@@ -679,9 +687,19 @@
 
   <section class="container-section" #pageSection>
     <div class="row fourth-row" #card2>
-      <div class="col-12 col-md-8" style="display:flex;justify-content: center; align-items: center;">
+      <div  class="col-12 col-md-8 subs-types" style="display:flex;justify-content: center; align-items: center; flex-direction: column;">
 
+        <div style="background-color: blue;" (click)="changeSelectedSub(0)" class="sub-type" [ngClass]="{'selected': selectedSub==0}" >
+        Estandar
+        </div>
 
+        <div style="background-color: red;" (click)="changeSelectedSub(1)" class="sub-type" [ngClass]="{'selected': selectedSub==1}" >
+          Premium
+        </div>
+
+        <div style="background-color: violet;" (click)="changeSelectedSub(2)" class="sub-type" [ngClass]="{'selected': selectedSub==2}" >
+          Padres
+        </div>
 
 
 
@@ -689,12 +707,11 @@
       <div class="col-12 col-md-4">
         <div class="row title-card" style="display:flex; text-align: center;justify-content: center;">
 
-          <span style="padding:2em;">Galeria de imagenes</span>
+          <span style="padding:2em;">Formas de subscripción</span>
         </div>
         <div class="row title-body" style="display:flex; text-align: center;justify-content: center;">
 
-          <span style="padding:2em; color: black;">Estas son algunas de nuestras vistas principales del sistema
-            donde</span>
+          <span style="padding:2em; color: black;">A continuación les presentamos las opciones que tiene para solicitar el servicio que ofrecemos</span>
         </div>
       </div>
 
