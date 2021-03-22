@@ -130,9 +130,9 @@
   </section>
 
   <section class="container-section" #pageSection>
-    <div class="section-title" #pageTitle>
+    <!-- <div class="section-title" #pageTitle>
       <span [innerHTML]="currentTitle">Bienvenidos</span>
-    </div>
+    </div> -->
     <div class="second-row">
       <div class="col-12 col-md-8">
         <div class="mycard admin-card">
@@ -689,16 +689,54 @@
     <div class="row fourth-row" #card2>
       <div  class="col-12 col-md-8 subs-types" style="display:flex;justify-content: center; align-items: center; flex-direction: column;">
 
-        <div style="background-color: blue;" (click)="changeSelectedSub(0)" class="sub-type" [ngClass]="{'selected': selectedSub==0}" >
-        Estandar
+        <div  (click)="changeSelectedSub(0)" class="sub-type" [ngClass]="{'selected': selectedSub==0}" >
+          <div class="subs-head" style="background-color: #2196f3;">
+            Básica
+          </div>
+          <div class="subs-head" style="background-color: #9acd8d">
+            <ul>
+              <li>Funcionalidades completas del usuario Parent.</li>
+            </ul>
+            
+          </div>
         </div>
 
-        <div style="background-color: red;" (click)="changeSelectedSub(1)" class="sub-type" [ngClass]="{'selected': selectedSub==1}" >
-          Premium
+        <div  (click)="changeSelectedSub(1)" class="sub-type" [ngClass]="{'selected': selectedSub==1}" >
+          <div class="subs-head" style="background-color: #08376b;">
+           Estándar
+          </div>
+          <div class="subs-head" style="background-color: #9acd8d">
+            <ul>
+              <li>Alta de alumnos y profesores.</li>
+
+                <li>Generacion de facturas.</li>
+                
+                <li>Envio de notificaciones por mail y whatsapp.</li>
+                
+                <li>Reporteria basica</li> 
+                
+                <li>Todas las demas funcionalidades que no se nombraron</li>
+            </ul>
+          </div>
         </div>
 
-        <div style="background-color: violet;" (click)="changeSelectedSub(2)" class="sub-type" [ngClass]="{'selected': selectedSub==2}" >
-          Padres
+        <div  (click)="changeSelectedSub(2)" class="sub-type" [ngClass]="{'selected': selectedSub==2}" >
+          <div class="subs-head" style="background-color: #072e51;">
+            Premium
+          </div>
+          <div class="subs-head" style="background-color: #9acd8d">
+            <ul>
+              <li>Reporteria premium.</li>
+
+           <li> Gestion de empleados.</li>
+
+          <li>Integracion de mercado pago.</li>
+
+        <li>Restructuracion de pago.</li>
+
+      <li>Evaluaciones virtuales.</li>
+            </ul>
+          </div>
         </div>
 
 
@@ -711,7 +749,8 @@
         </div>
         <div class="row title-body" style="display:flex; text-align: center;justify-content: center;">
 
-          <span style="padding:2em; color: black;">A continuación les presentamos las opciones que tiene para solicitar el servicio que ofrecemos</span>
+          <span style="padding:2em; color: black;">A continuación les presentamos las opciones que tiene para solicitar el servicio de Click Escuela</span>
+          <button type="button" class="btn btn-outline-primary contract" >Contratar</button>
         </div>
       </div>
 
