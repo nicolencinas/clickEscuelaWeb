@@ -367,7 +367,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translate(100%);
+  transform: translate(101%);
   transition: 0.5s ease-in-out;
  
 }
@@ -885,10 +885,56 @@ svg{
 //Probando animaciones para mostrar info{
 
 
-  
+  .mobile-under{
+    margin-top: 98px;
+    display: none;
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 999;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    font-family: "BebasNeue", sans-serif;
+    color: whitesmoke;
+    font-size: 2em;
+    line-height: 1em;
+    flex-direction: column;
+    background: url(../../../assets/images/under.svg);
+    background-color: $blue-A;
+    background-size: cover;
+    background-position: 50% 25%;
+  }
+
+  .mobile-under span{
+    font-family: "BebasNeue", sans-serif;
+    font-size: 1em;
+    line-height: 1em;
+    margin-top: 2em;
+  }
+
+  .mobile-under svg{
+    width: 90px;
+  }
+
+  .help-us{
+    width: 70px;
+    height: 70px;
+    background-color: $blue-gray-2;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center ;
+    font-size: 1.2em;
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.527);
+  }
 
 @media (max-width: 960px)
 {
+  .mobile-under{
+    display: flex;
+  }
   .card-info{
     width: 100% !important;
   }
@@ -1810,8 +1856,8 @@ h5{
   
 }
 
-.subs-head:nth-child(1):hover{
-  transform: scale(1.3);
+.subs-head:nth-child(1):hover svg{
+  transform: scale(1.2);
 }
 
 .subs-head:nth-child(2){
@@ -1836,6 +1882,18 @@ h5{
   background: url(../../../assets/images/background.png);
   background-size: cover;
 }
+
+.svg-icon
+{
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  margin-right: 1em;
+  margin-right: 12em;
+}
+
+
+
  
 ul{
 
