@@ -1,13 +1,13 @@
 
 <div class="mobile-under">
   <span>
-     Lo sentimos la vista mobile estan en desarrollo.
-  <br> 
-  Queremos brindarte una mejor experiencia
-  <br>
-  Proximamente 
+    
   </span>
-
+  Lo sentimos la vista mobile estan en desarrollo.
+  <br> 
+  Esperamos poder brindarte una mejor experiencia
+  <br>
+  Proximamente
 
   <svg class="animate-conectors" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 419.5 434.6" style="enable-background:new 0 0 419.5 434.6;" xml:space="preserve">
@@ -560,7 +560,62 @@
 
 
     </div>
-    <div class="row"
+
+
+    <div class="presentation">
+      <img class="presentation-background" src="../../../assets/images/background.png" alt="">
+      <div class="first-presentation" #responsive (click)="presentationNumber=1">
+        <img class="click" src="../../../assets/images/click.svg" alt="">
+        <span>
+          A un solo click de distancia
+        </span>
+      </div>
+
+      <div class="second-presentation" [ngClass]="{'show-presentation': presentationNumber===1}" (click)="presentationNumber=0">
+        <span [ngClass]="{'showed': presentationNumber===1}">
+          ClickEscuela es una herramienta <br> que permite mejorar la administración
+            de los establecimientos educativos
+        </span> 
+        <span [ngClass]="{'showed': presentationNumber===1}">
+            Brindando informacion de cuotas adeudas, automatizando tareas y
+            emitiendo un balance general de gastos.
+        </span>
+        <span [ngClass]="{'showed': presentationNumber===1}">
+          Ademas agiliza el trabajo de los docentes, aumenta la
+          participación de los padres en el proceso educativo de sus hijos. 
+        </span>
+        <span [ngClass]="{'showed': presentationNumber===1}">
+          Formando de esta manera un canal directo entre estos y la
+          escuela, en donde se puede seguir la asistencia a clase, tareas y calificaciones.
+        </span>
+
+        <button class="start-way" [ngClass]="{'showed': presentationNumber===1}" (click)="changePage(1)" mat-button style="margin-top: 2em;" >Iniciar Recorrido</button>
+        <svg class="arrow-svg" [ngClass]="{'showed': presentationNumber===1}"  id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 233.74 283.16">
+          <defs>
+            <style>
+              .cls-11 {
+                fill: none;
+                stroke: #9acd8d;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-width: 14px;
+              }
+            </style>
+          </defs>
+          <path id="arrow3" class="cls-11" d="M8.64,245.41,100.24,337A23.89,23.89,0,0,0,134,337l94.38-94.39"
+            transform="translate(-1.64 -67.84)" />
+          <path id="arrow2" class="cls-11" d="M22.4,163.81l80.13,80.13a20.91,20.91,0,0,0,29.53,0l82.56-82.56"
+            transform="translate(-1.64 -67.84)" />
+          <path id="arrow1" class="cls-11" d="M24.71,77.21l78.21,78.21a20.38,20.38,0,0,0,28.81,0l80.58-80.58"
+            transform="translate(-1.64 -67.84)" />
+        </svg>
+      </div>
+
+
+    </div>
+
+    <!-- <div class="row"
       style="margin-top: 0.6em; height: 60%; height: 60%;width: 80%;border-radius: 2em;overflow: hidden;">
       <div class="col-12 col-md-4">
         <div class="row title-card" style="display:flex; text-align: center;justify-content: center; ;">
@@ -603,7 +658,7 @@
         </svg>
 
       </div>
-    </div>
+    </div> -->
 
   </section>
 
@@ -834,7 +889,7 @@
         </div>
       </div>
       <div class="col-12 col-md-8" style="display:flex;justify-content: center; align-items: center; background-color: whitesmoke">
-        <div class="responsive-button" matTooltip="Ver mas" #responsive (click)='showMultiplatform()'>
+        <div class="responsive-button" matTooltip="Ver mas"  (click)='showMultiplatform()'>
           <img [src]="getimageDesign()" alt="">
         </div>
         <div class="platforms" [ngClass]="{'multiplatform': multiplatform}">

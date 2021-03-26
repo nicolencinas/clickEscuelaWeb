@@ -56,6 +56,8 @@ export class HomepageComponent implements OnInit {
   bodyDesing:string;
   imgDesign:string;
 
+  presentationNumber:number;
+
 
 
   constructor(private render: Renderer2,private scroller: ScrollDispatcher)
@@ -91,6 +93,8 @@ export class HomepageComponent implements OnInit {
   this.bodyDesing="En click escuela cuidamos el aspecto de nuestras interfaces enfocándonos en una estructura limpia y sencilla, con una iconografía sutil y que contraste con la paleta de colores seleccionada. Tambien cuenta con animaciones que hacen la experiencia mas fluida"
     
   this.imgDesign="../../../assets/images/responsive.svg"
+
+  this.presentationNumber=0;
   }
 
   changePage(page){
@@ -324,15 +328,7 @@ export class HomepageComponent implements OnInit {
 
  
 
-//   ngAfterViewInit() {
-//     VanillaTilt.init(this.responsive.nativeElement, {
-//       max: 20,
-//       speed: 400,
-//       perspective:2000,
-//     glare: true,
-//     "max-glare":0.5
-//     });
-// }
+
 
 showMultiplatform(){
   this.multiplatform=!this.multiplatform
