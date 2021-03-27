@@ -393,12 +393,17 @@ selectImage(num:number){
   this.currentImage=num;
   this.selectedImage=this.imagesList[num]
 }
-  //   VanillaTilt.init(this.card2.nativeElement, {
-  //     max: 15,
-  //     speed: 400,
-  //     glare: false,
-  //     "max-glare":1
-  //   });
+
+ngAfterViewInit(){
+     VanillaTilt.init(this.responsive.nativeElement, {
+      max: 20,
+      speed: 400,
+      glare: false,
+      "max-glare":0.5,
+      scale: 1.2
+    });
+}
+ 
 
   //   VanillaTilt.init(this.card3.nativeElement, {
   //     max: 15,
