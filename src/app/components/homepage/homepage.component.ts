@@ -104,7 +104,6 @@ export class HomepageComponent implements OnInit {
 
   changeSelectedSub(num:number){
     num!=this.selectedSub ? this.selectedSub=num: this.selectedSub=-1
-    console.log(this.selectedSub)
   }
 
   changeScroll(){
@@ -182,16 +181,18 @@ export class HomepageComponent implements OnInit {
   
   wheelingUp=(s)=>
   {
+    //console.log(s.wheelDelta)
     
     if(this.modernScroll)
     {
- s.preventDefault()
-  s.stopPropagation()
-
-    if (this.animationIsDone)
-    {
+      s.preventDefault()
+      s.stopPropagation()
+      
+      if (this.animationIsDone)
+      {
+      console.log(s.deltaY)
       this.animationIsDone=false;
- if (s.wheelDelta>0){
+ if (s.deltaY<0){
       if (this.currentPage==0)
       {
         this.currentPage=this.pages.length
@@ -208,7 +209,7 @@ export class HomepageComponent implements OnInit {
       
     }
 
-    if (s.wheelDelta<0)
+    if (s.deltaY>0)
     {
       
       if (this.currentPage==this.pages.length)
@@ -228,8 +229,8 @@ export class HomepageComponent implements OnInit {
       
     }
 
-    let that =this;
-    setTimeout(function(){that.animationIsDone=true},1000)
+   
+    setTimeout(()=>{this.animationIsDone=true},500)
 
     
   }
@@ -256,7 +257,6 @@ export class HomepageComponent implements OnInit {
 
 
     this.selectedImage=this.imagesList[this.currentImage]
-    console.log(this.currentImage)
   }
 
   prevImage(){
@@ -275,7 +275,6 @@ export class HomepageComponent implements OnInit {
   scrollPage()
   {
     const offset=this.pages.last.nativeElement.clientHeight*this.currentPage-25;
-    console.log(offset)
     document.body.scrollTop=offset
 
   }
@@ -344,7 +343,6 @@ showMultiplatform(){
   this.bodyDesing="La aplicacion es completamente responsive, es decir, que esta diseñada y optimizada para poder ser utilizada en todos los dispositivos. Esto pensando en la facilidad de visualización en dispositivos moviles"
   }
 
-  console.log(this.titleDesing)
   
 }
 
@@ -421,7 +419,6 @@ calculatePage(sc,height)
 
    this.currentPage=calcPage
    
-   console.log(this.currentPage)
 
   
   }
@@ -443,14 +440,12 @@ calculatePage(sc,height)
   if (this.currentPage>0){root.style.setProperty('--opacity-var','1')
   
  
-  console.log(this.currentTitle,this.currentPage)
 } 
 else{
   root.style.setProperty('--opacity-var','0')
 }
-this.render.addClass(this.pageTitle.nativeElement,'twist')
-var that= this;
-setTimeout(function(){that.render.removeClass(that.pageTitle.nativeElement,'twist')},500)
+
+
   switch(this.currentPage){
     case 0 : this.currentTitle="Bienvenidos"; break
     case 1: this.currentTitle="Nuestro foco es la administracion."; break
